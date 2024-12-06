@@ -598,7 +598,10 @@ export default abstract class ExpressionParser extends LValParser {
   ): N.Expression {
     const startLoc = this.state.startLoc;
     const isAwait = this.isContextual(tt._await);
-
+    if (this.state.value === "!!") {
+      //Do some Thing to split it to two !;
+      this.split_exclamation();
+    }
     if (isAwait && this.isAwaitAllowed()) {
       this.next();
       const expr = this.parseAwait(startLoc);

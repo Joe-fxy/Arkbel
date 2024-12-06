@@ -119,6 +119,14 @@ export default abstract class Tokenizer extends CommentsParser {
     this.state.lastTokStartLoc = this.state.startLoc;
     this.nextToken();
   }
+  split_exclamation(): void {
+    this.state.value = "!";
+    this.state.type = 35;
+    this.state.lastTokEndLoc.column = this.state.endLoc.column - 1;
+    this.state.lastTokEndLoc.index = this.state.endLoc.index - 1;
+    this.state.lastTokStartLoc.column = this.state.lastTokStartLoc.column - 1;
+    this.state.lastTokStartLoc.index = this.state.lastTokStartLoc.index - 1;
+  }
 
   eat(type: TokenType): boolean {
     if (this.match(type)) {
@@ -817,7 +825,45 @@ export default abstract class Tokenizer extends CommentsParser {
       this.finishToken(tt.arrow);
       return;
     }
+    if (
+      code === charCodes.exclamationMark &&
+      next === charCodes.exclamationMark
+    ) {
+      // '!!'
+      this.finishOp(tt.doubleExclamation, 2);
+      return;
+    }
     this.finishOp(code === charCodes.equalsTo ? tt.eq : tt.bang, 1);
+  }
+  readToken_double_dollar(code: number): void {
+    //'$$'
+    //Must be '$$this.'! If not, it is just a name;
+    try {
+      //There may be not so many code after first '$';
+      const next = this.input.charCodeAt(this.state.pos + 1);
+      const next2 = this.input.charCodeAt(this.state.pos + 2);
+      const next3 = this.input.charCodeAt(this.state.pos + 3);
+      const next4 = this.input.charCodeAt(this.state.pos + 4);
+      const next5 = this.input.charCodeAt(this.state.pos + 5);
+      const next6 = this.input.charCodeAt(this.state.pos + 6);
+      if (
+        code === charCodes.dollarSign &&
+        next === charCodes.dollarSign &&
+        next2 === charCodes.lowercaseT &&
+        next3 === charCodes.lowercaseH &&
+        next4 === charCodes.lowercaseI &&
+        next5 === charCodes.lowercaseS &&
+        next6 === charCodes.dot
+      ) {
+        this.finishOp(tt.doubleDollar, 2);
+        return;
+      }
+      this.readWord(code);
+      return;
+    } catch (e) {
+      this.readWord(code);
+      return;
+    }
   }
 
   readToken_question(): void {
@@ -1016,6 +1062,10 @@ export default abstract class Tokenizer extends CommentsParser {
       case charCodes.equalsTo:
       case charCodes.exclamationMark:
         this.readToken_eq_excl(code);
+        return;
+
+      case charCodes.dollarSign:
+        this.readToken_double_dollar(code);
         return;
 
       case charCodes.tilde:

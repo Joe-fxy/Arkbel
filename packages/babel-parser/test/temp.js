@@ -5,11 +5,13 @@ function getParser(code) {
     parse(code, { sourceType: "module", plugins: ["arkts", "decorators"] });
 }
 function shouldParse(name, code) {
+  // eslint-disable-next-line jest/valid-title
   it(name, () => {
     expect(getParser(code)()).toMatchSnapshot();
   });
 }
-function shouldsetError(name, code){
+function shouldsetError(name, code) {
+  // eslint-disable-next-line jest/valid-title
   it(name, () => {
     expect(() =>
       parse(code, { sourceType: "module", plugins: ["arkts", "decorators"] }),
@@ -56,14 +58,8 @@ describe("arkts", () => {
     "export default try 2",
     "@Custom export default struct Inte{ build(){}}",
   );
-  shouldParse(
-    "export try 0",
-    "export struct A { build() {}}",
-  );
-  shouldParse(
-    "export try",
-    "@Component export struct A { build() {}}",
-  );
+  shouldParse("export try 0", "export struct A { build() {}}");
+  shouldParse("export try", "@Component export struct A { build() {}}");
   shouldParse(
     "export try 2",
     "@Entry @Component export struct A { build() {}}",
@@ -100,12 +96,9 @@ describe("arkts", () => {
     "stateStyles property case 2 with {.}",
     "struct Foo{build(){Column().stateStyles({f:{.height(100)}})}}",
   );
+  shouldParse("import in ArkTS", "import * as all from './export' ");
   shouldParse(
-    "import in ArkTS",
-    "import * as all from './export' ",
-  );
-  shouldParse(
-    "@Builder Decorate Function in top space",
+    "@Builder Decorate Function in top scope",
     "@Builder function Foo(a:string){Row(){}}",
   );
   shouldParse(
@@ -113,7 +106,7 @@ describe("arkts", () => {
     "struct A{@Builder Foo(a:string){Row(){}.h(100)}}",
   );
   shouldParse(
-    "@Builderparam Decorate property use function in top space",
+    "@Builderparam Decorate property use function in top scope",
     "@Builder function f() {} struct A{@BuilderParam a: () => void = f;}",
   );
   shouldParse(
@@ -121,11 +114,15 @@ describe("arkts", () => {
     "struct A{@Builder f() {} @BuilderParam a: () => void = this.f;}",
   );
   shouldParse(
-    "@Extend Decorate Function in the top space",
+    "@Extend Decorate Function in the top scope",
     "@Extend(Text) function Foo(a:number){.setsize(a)}",
   );
   shouldParse(
-    "@Styles Decorate Function in top space",
+    "@AnimatableExtend Decorate Function in the top scope",
+    "@AnimatableExtend(Text) function Foo(a:number){.setsize(a)}",
+  );
+  shouldParse(
+    "@Styles Decorate Function in top-scope",
     "@Styles function Foo(){.setsize(2)}",
   );
   shouldParse(
@@ -143,18 +140,19 @@ describe("arkts", () => {
   //   "struct A { build() { Column('a') { if (true) { Text('b') } else if (true) { Text('c') } else { Text('d') } } } }",
   // );
   shouldParse(
-    "A true case in ArkTS",
-    "@Component\n" +
-      "struct Foo {\n" +
-      "  build() {\n" +
-      "    Text('ArkTS')\n" +
-      "      .stateStyles({\n" +
-      "        normal: this.normalStyle,\n" +
-      "        pressed: this.pressedStyle,\n" +
-      "        focused: this.focusedStyle,\n" +
-      "        disabled: this.disabledStyle,\n" +
-      "      })\n" +
-      "  }\n" +
-      "}",
+    "two way binding variable use '!!'",
+    "struct A{build(){Text({t:this.t!!})}}",
+  );
+  shouldParse(
+    "two way binding variable use '$$'",
+    "struct A{build(){Text({t:$$this.t})}}",
+  );
+  shouldParse(
+    "two way binding variable use '$$' ,and use field named with '$' ",
+    "struct A{@State $value:number;build(){Text({t:$$this.$value})}}",
+  );
+  shouldParse(
+    "two way binding variable use '!!' ,and use expression with double '!' ",
+    "function A(s:boolean|undefined){return !!s};struct A{build(){Text({t:this.t!!})}}",
   );
 });

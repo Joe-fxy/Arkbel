@@ -31,10 +31,18 @@ interface BaseNodePathValidators {
     this: NodePath<T>,
     opts?: Opts<t.ArkTSCallExpression>,
   ): this is NodePath<T & t.ArkTSCallExpression>;
+  isArkTSDoubleExclamationExpression<T extends t.Node>(
+    this: NodePath<T>,
+    opts?: Opts<t.ArkTSDoubleExclamationExpression>,
+  ): this is NodePath<T & t.ArkTSDoubleExclamationExpression>;
   isArkTSStructDeclaration<T extends t.Node>(
     this: NodePath<T>,
     opts?: Opts<t.ArkTSStructDeclaration>,
   ): this is NodePath<T & t.ArkTSStructDeclaration>;
+  isArkTSTwoWayBindingExpression<T extends t.Node>(
+    this: NodePath<T>,
+    opts?: Opts<t.ArkTSTwoWayBindingExpression>,
+  ): this is NodePath<T & t.ArkTSTwoWayBindingExpression>;
   isArrayExpression<T extends t.Node>(
     this: NodePath<T>,
     opts?: Opts<t.ArrayExpression>,

@@ -468,8 +468,15 @@ export const functionDeclarationCommon = () => ({
 });
 
 defineType("FunctionDeclaration", {
-  builder: ["id", "params", "body", "generator", "async"],
-  visitor: ["id", "params", "body", "returnType", "typeParameters"],
+  builder: ["id", "params", "body", "generator", "async", "decorators"],
+  visitor: [
+    "id",
+    "params",
+    "body",
+    "returnType",
+    "typeParameters",
+    "decorators",
+  ],
   fields: {
     ...functionDeclarationCommon(),
     ...functionTypeAnnotationCommon(),
@@ -478,6 +485,13 @@ defineType("FunctionDeclaration", {
     },
     predicate: {
       validate: assertNodeType("DeclaredPredicate", "InferredPredicate"),
+      optional: true,
+    },
+    decorators: {
+      validate: chain(
+        assertValueType("array"),
+        assertEach(assertNodeType("Decorator")),
+      ),
       optional: true,
     },
   },
@@ -1011,6 +1025,8 @@ defineType("ObjectProperty", {
       "TSSatisfiesExpression",
       "TSNonNullExpression",
       "TSTypeAssertion",
+      "ArkTSDoubleExclamationExpression",
+      "ArkTSTwoWayBindingExpression",
     );
     const expression = assertNodeType("Expression");
 

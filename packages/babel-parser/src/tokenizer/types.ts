@@ -201,6 +201,10 @@ export const tt = {
   bang: createToken("!", { beforeExpr, prefix, startsExpr }),
   tilde: createToken("~", { beforeExpr, prefix, startsExpr }),
 
+  //ArkTS two way binding
+  doubleDollar: createToken("$$", { beforeExpr, startsExpr }),
+  doubleExclamation: createToken("!!", { beforeExpr, startsExpr }),
+
   // More possible topic tokens.
   // When the proposal settles on a token, at least one of these may be removed.
   doubleCaret: createToken("^^", { startsExpr }),

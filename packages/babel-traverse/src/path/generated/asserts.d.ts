@@ -24,9 +24,15 @@ export interface NodePathAssertions {
   assertArkTSCallExpression(
     opts?: Opts<t.ArkTSCallExpression>,
   ): asserts this is NodePath<t.ArkTSCallExpression>;
+  assertArkTSDoubleExclamationExpression(
+    opts?: Opts<t.ArkTSDoubleExclamationExpression>,
+  ): asserts this is NodePath<t.ArkTSDoubleExclamationExpression>;
   assertArkTSStructDeclaration(
     opts?: Opts<t.ArkTSStructDeclaration>,
   ): asserts this is NodePath<t.ArkTSStructDeclaration>;
+  assertArkTSTwoWayBindingExpression(
+    opts?: Opts<t.ArkTSTwoWayBindingExpression>,
+  ): asserts this is NodePath<t.ArkTSTwoWayBindingExpression>;
   assertArrayExpression(
     opts?: Opts<t.ArrayExpression>,
   ): asserts this is NodePath<t.ArrayExpression>;

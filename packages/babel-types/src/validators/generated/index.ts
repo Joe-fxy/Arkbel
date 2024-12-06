@@ -2477,6 +2477,26 @@ export function isTSNonNullExpression(
 
   return opts == null || shallowEqual(node, opts);
 }
+export function isArkTSTwoWayBindingExpression(
+  node: t.Node | null | undefined,
+  opts?: Opts<t.ArkTSTwoWayBindingExpression> | null,
+): node is t.ArkTSTwoWayBindingExpression {
+  if (!node) return false;
+
+  if (node.type !== "ArkTSTwoWayBindingExpression") return false;
+
+  return opts == null || shallowEqual(node, opts);
+}
+export function isArkTSDoubleExclamationExpression(
+  node: t.Node | null | undefined,
+  opts?: Opts<t.ArkTSDoubleExclamationExpression> | null,
+): node is t.ArkTSDoubleExclamationExpression {
+  if (!node) return false;
+
+  if (node.type !== "ArkTSDoubleExclamationExpression") return false;
+
+  return opts == null || shallowEqual(node, opts);
+}
 export function isTSExportAssignment(
   node: t.Node | null | undefined,
   opts?: Opts<t.TSExportAssignment> | null,
@@ -2712,6 +2732,8 @@ export function isExpression(
     case "TSSatisfiesExpression":
     case "TSTypeAssertion":
     case "TSNonNullExpression":
+    case "ArkTSTwoWayBindingExpression":
+    case "ArkTSDoubleExclamationExpression":
       break;
     case "Placeholder":
       switch (node.expectedNode) {
@@ -3171,6 +3193,8 @@ export function isPatternLike(
     case "TSSatisfiesExpression":
     case "TSTypeAssertion":
     case "TSNonNullExpression":
+    case "ArkTSTwoWayBindingExpression":
+    case "ArkTSDoubleExclamationExpression":
       break;
     case "Placeholder":
       switch (node.expectedNode) {
@@ -3205,6 +3229,8 @@ export function isLVal(
     case "TSSatisfiesExpression":
     case "TSTypeAssertion":
     case "TSNonNullExpression":
+    case "ArkTSTwoWayBindingExpression":
+    case "ArkTSDoubleExclamationExpression":
       break;
     case "Placeholder":
       switch (node.expectedNode) {
@@ -3839,6 +3865,8 @@ export function isTypeScript(
     case "TSImportEqualsDeclaration":
     case "TSExternalModuleReference":
     case "TSNonNullExpression":
+    case "ArkTSTwoWayBindingExpression":
+    case "ArkTSDoubleExclamationExpression":
     case "TSExportAssignment":
     case "TSNamespaceExportDeclaration":
     case "TSTypeAnnotation":

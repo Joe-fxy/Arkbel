@@ -567,7 +567,7 @@ export default function _regeneratorRuntime() {
           context.method = "next";
           context.arg = undefined;
         }
-        return !!caught;
+        return !caught;
       }
       for (var i = this.tryEntries.length - 1; i >= 0; --i) {
         var entry = this.tryEntries[i];

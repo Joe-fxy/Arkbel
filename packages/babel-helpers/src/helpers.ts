@@ -312,7 +312,7 @@ helpers.wrapNativeSuper = helper("7.0.0-beta.0")`
 helpers.instanceof = helper("7.0.0-beta.0")`
   export default function _instanceof(left, right) {
     if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
-      return !!right[Symbol.hasInstance](left);
+      return !(!right[Symbol.hasInstance](left));
     } else {
       return left instanceof right;
     }
@@ -853,8 +853,8 @@ helpers.applyDecoratedDescriptor = helper("7.0.0-beta.0")`
         Object.keys(descriptor).forEach(function(key){
             desc[key] = descriptor[key];
         });
-        desc.enumerable = !!desc.enumerable;
-        desc.configurable = !!desc.configurable;
+        desc.enumerable = !(!desc.enumerable);
+        desc.configurable = !(!desc.configurable);
         if ('value' in desc || desc.initializer){
             desc.writable = true;
         }

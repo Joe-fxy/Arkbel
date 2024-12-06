@@ -1491,6 +1491,18 @@ export function assertTSNonNullExpression(
 ): asserts node is t.TSNonNullExpression {
   assert("TSNonNullExpression", node, opts);
 }
+export function assertArkTSTwoWayBindingExpression(
+  node: object | null | undefined,
+  opts?: object | null,
+): asserts node is t.ArkTSTwoWayBindingExpression {
+  assert("ArkTSTwoWayBindingExpression", node, opts);
+}
+export function assertArkTSDoubleExclamationExpression(
+  node: object | null | undefined,
+  opts?: object | null,
+): asserts node is t.ArkTSDoubleExclamationExpression {
+  assert("ArkTSDoubleExclamationExpression", node, opts);
+}
 export function assertTSExportAssignment(
   node: object | null | undefined,
   opts?: object | null,

@@ -255,6 +255,8 @@ export {
   tsImportEqualsDeclaration as TSImportEqualsDeclaration,
   tsExternalModuleReference as TSExternalModuleReference,
   tsNonNullExpression as TSNonNullExpression,
+  arkTSTwoWayBindingExpression as ArkTSTwoWayBindingExpression,
+  arkTSDoubleExclamationExpression as ArkTSDoubleExclamationExpression,
   tsExportAssignment as TSExportAssignment,
   tsNamespaceExportDeclaration as TSNamespaceExportDeclaration,
   tsTypeAnnotation as TSTypeAnnotation,

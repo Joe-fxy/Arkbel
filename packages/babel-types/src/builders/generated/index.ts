@@ -229,6 +229,7 @@ export function functionDeclaration(
   body: t.BlockStatement,
   generator: boolean = false,
   async: boolean = false,
+  decorators: Array<t.Decorator> | null = null,
 ): t.FunctionDeclaration {
   return validateNode<t.FunctionDeclaration>({
     type: "FunctionDeclaration",
@@ -237,14 +238,16 @@ export function functionDeclaration(
     body,
     generator,
     async,
+    decorators,
   });
 }
 export function functionExpression(
   id: t.Identifier | null | undefined = null,
   params: Array<t.Identifier | t.Pattern | t.RestElement>,
   body: t.BlockStatement,
-  generator: boolean = false,
-  async: boolean = false,
+  generator: boolean | undefined = false,
+  async: boolean | undefined = false,
+  decorators: any,
 ): t.FunctionExpression {
   return validateNode<t.FunctionExpression>({
     type: "FunctionExpression",
@@ -253,6 +256,7 @@ export function functionExpression(
     body,
     generator,
     async,
+    decorators,
   });
 }
 export function identifier(name: string): t.Identifier {
@@ -2503,6 +2507,22 @@ export function tsNonNullExpression(
   });
 }
 export { tsNonNullExpression as tSNonNullExpression };
+export function arkTSTwoWayBindingExpression(
+  expression: t.Expression,
+): t.ArkTSTwoWayBindingExpression {
+  return validateNode<t.ArkTSTwoWayBindingExpression>({
+    type: "ArkTSTwoWayBindingExpression",
+    expression,
+  });
+}
+export function arkTSDoubleExclamationExpression(
+  expression: t.Expression,
+): t.ArkTSDoubleExclamationExpression {
+  return validateNode<t.ArkTSDoubleExclamationExpression>({
+    type: "ArkTSDoubleExclamationExpression",
+    expression,
+  });
+}
 export function tsExportAssignment(
   expression: t.Expression,
 ): t.TSExportAssignment {

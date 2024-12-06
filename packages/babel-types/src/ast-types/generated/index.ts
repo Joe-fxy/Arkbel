@@ -52,7 +52,9 @@ export type Node =
   | AnyTypeAnnotation
   | ArgumentPlaceholder
   | ArkTSCallExpression
+  | ArkTSDoubleExclamationExpression
   | ArkTSStructDeclaration
+  | ArkTSTwoWayBindingExpression
   | ArrayExpression
   | ArrayPattern
   | ArrayTypeAnnotation
@@ -463,6 +465,7 @@ export interface FunctionDeclaration extends BaseNode {
   body: BlockStatement;
   generator: boolean;
   async: boolean;
+  decorators?: Array<Decorator> | null;
   declare?: boolean | null;
   predicate?: DeclaredPredicate | InferredPredicate | null;
   returnType?: TypeAnnotation | TSTypeAnnotation | Noop | null;
@@ -480,6 +483,7 @@ export interface FunctionExpression extends BaseNode {
   body: BlockStatement;
   generator: boolean;
   async: boolean;
+  decorators: any;
   predicate?: DeclaredPredicate | InferredPredicate | null;
   returnType?: TypeAnnotation | TSTypeAnnotation | Noop | null;
   typeParameters?:
@@ -2076,6 +2080,16 @@ export interface TSNonNullExpression extends BaseNode {
   expression: Expression;
 }
 
+export interface ArkTSTwoWayBindingExpression extends BaseNode {
+  type: "ArkTSTwoWayBindingExpression";
+  expression: Expression;
+}
+
+export interface ArkTSDoubleExclamationExpression extends BaseNode {
+  type: "ArkTSDoubleExclamationExpression";
+  expression: Expression;
+}
+
 export interface TSExportAssignment extends BaseNode {
   type: "TSExportAssignment";
   expression: Expression;
@@ -2255,7 +2269,9 @@ export type Expression =
   | TSAsExpression
   | TSSatisfiesExpression
   | TSTypeAssertion
-  | TSNonNullExpression;
+  | TSNonNullExpression
+  | ArkTSTwoWayBindingExpression
+  | ArkTSDoubleExclamationExpression;
 export type Binary = BinaryExpression | LogicalExpression;
 export type Scopable =
   | BlockStatement
@@ -2436,7 +2452,9 @@ export type PatternLike =
   | TSAsExpression
   | TSSatisfiesExpression
   | TSTypeAssertion
-  | TSNonNullExpression;
+  | TSNonNullExpression
+  | ArkTSTwoWayBindingExpression
+  | ArkTSDoubleExclamationExpression;
 export type LVal =
   | Identifier
   | MemberExpression
@@ -2448,7 +2466,9 @@ export type LVal =
   | TSAsExpression
   | TSSatisfiesExpression
   | TSTypeAssertion
-  | TSNonNullExpression;
+  | TSNonNullExpression
+  | ArkTSTwoWayBindingExpression
+  | ArkTSDoubleExclamationExpression;
 export type TSEntityName = Identifier | TSQualifiedName;
 export type Literal =
   | StringLiteral
@@ -2718,6 +2738,8 @@ export type TypeScript =
   | TSImportEqualsDeclaration
   | TSExternalModuleReference
   | TSNonNullExpression
+  | ArkTSTwoWayBindingExpression
+  | ArkTSDoubleExclamationExpression
   | TSExportAssignment
   | TSNamespaceExportDeclaration
   | TSTypeAnnotation
@@ -2880,6 +2902,8 @@ export interface ParentMaps {
     | OptionalCallExpression;
   ArkTSCallExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -2944,6 +2968,76 @@ export interface ParentMaps {
     | WhileStatement
     | WithStatement
     | YieldExpression;
+  ArkTSDoubleExclamationExpression:
+    | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
+    | ArrayExpression
+    | ArrayPattern
+    | ArrowFunctionExpression
+    | AssignmentExpression
+    | AssignmentPattern
+    | AwaitExpression
+    | BinaryExpression
+    | BindExpression
+    | CallExpression
+    | ClassAccessorProperty
+    | ClassDeclaration
+    | ClassExpression
+    | ClassMethod
+    | ClassPrivateProperty
+    | ClassProperty
+    | ConditionalExpression
+    | Decorator
+    | DoWhileStatement
+    | ExportDefaultDeclaration
+    | ExpressionStatement
+    | ForInStatement
+    | ForOfStatement
+    | ForStatement
+    | IfStatement
+    | ImportExpression
+    | JSXExpressionContainer
+    | JSXSpreadAttribute
+    | JSXSpreadChild
+    | LogicalExpression
+    | MemberExpression
+    | NewExpression
+    | ObjectMethod
+    | ObjectProperty
+    | OptionalCallExpression
+    | OptionalMemberExpression
+    | ParenthesizedExpression
+    | PipelineBareFunction
+    | PipelineTopicExpression
+    | RestElement
+    | ReturnStatement
+    | SequenceExpression
+    | SpreadElement
+    | SwitchCase
+    | SwitchStatement
+    | TSAsExpression
+    | TSDeclareMethod
+    | TSEnumDeclaration
+    | TSEnumMember
+    | TSExportAssignment
+    | TSInstantiationExpression
+    | TSMethodSignature
+    | TSNonNullExpression
+    | TSPropertySignature
+    | TSSatisfiesExpression
+    | TSTypeAssertion
+    | TaggedTemplateExpression
+    | TemplateLiteral
+    | ThrowStatement
+    | TupleExpression
+    | TypeCastExpression
+    | UnaryExpression
+    | UpdateExpression
+    | VariableDeclarator
+    | WhileStatement
+    | WithStatement
+    | YieldExpression;
   ArkTSStructDeclaration:
     | BlockStatement
     | DoWhileStatement
@@ -2960,8 +3054,80 @@ export interface ParentMaps {
     | TSModuleBlock
     | WhileStatement
     | WithStatement;
+  ArkTSTwoWayBindingExpression:
+    | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
+    | ArrayExpression
+    | ArrayPattern
+    | ArrowFunctionExpression
+    | AssignmentExpression
+    | AssignmentPattern
+    | AwaitExpression
+    | BinaryExpression
+    | BindExpression
+    | CallExpression
+    | ClassAccessorProperty
+    | ClassDeclaration
+    | ClassExpression
+    | ClassMethod
+    | ClassPrivateProperty
+    | ClassProperty
+    | ConditionalExpression
+    | Decorator
+    | DoWhileStatement
+    | ExportDefaultDeclaration
+    | ExpressionStatement
+    | ForInStatement
+    | ForOfStatement
+    | ForStatement
+    | IfStatement
+    | ImportExpression
+    | JSXExpressionContainer
+    | JSXSpreadAttribute
+    | JSXSpreadChild
+    | LogicalExpression
+    | MemberExpression
+    | NewExpression
+    | ObjectMethod
+    | ObjectProperty
+    | OptionalCallExpression
+    | OptionalMemberExpression
+    | ParenthesizedExpression
+    | PipelineBareFunction
+    | PipelineTopicExpression
+    | RestElement
+    | ReturnStatement
+    | SequenceExpression
+    | SpreadElement
+    | SwitchCase
+    | SwitchStatement
+    | TSAsExpression
+    | TSDeclareMethod
+    | TSEnumDeclaration
+    | TSEnumMember
+    | TSExportAssignment
+    | TSInstantiationExpression
+    | TSMethodSignature
+    | TSNonNullExpression
+    | TSPropertySignature
+    | TSSatisfiesExpression
+    | TSTypeAssertion
+    | TaggedTemplateExpression
+    | TemplateLiteral
+    | ThrowStatement
+    | TupleExpression
+    | TypeCastExpression
+    | UnaryExpression
+    | UpdateExpression
+    | VariableDeclarator
+    | WhileStatement
+    | WithStatement
+    | YieldExpression;
   ArrayExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3076,6 +3242,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   ArrowFunctionExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3142,6 +3310,8 @@ export interface ParentMaps {
     | YieldExpression;
   AssignmentExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3225,6 +3395,8 @@ export interface ParentMaps {
     | VariableDeclarator;
   AwaitExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3291,6 +3463,8 @@ export interface ParentMaps {
     | YieldExpression;
   BigIntLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3358,6 +3532,8 @@ export interface ParentMaps {
     | YieldExpression;
   BinaryExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3424,6 +3600,8 @@ export interface ParentMaps {
     | YieldExpression;
   BindExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3515,6 +3693,8 @@ export interface ParentMaps {
     | WithStatement;
   BooleanLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3647,6 +3827,8 @@ export interface ParentMaps {
     | WithStatement;
   CallExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3732,6 +3914,8 @@ export interface ParentMaps {
     | WithStatement;
   ClassExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3810,6 +3994,8 @@ export interface ParentMaps {
   CommentLine: File;
   ConditionalExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -3904,6 +4090,8 @@ export interface ParentMaps {
     | WithStatement;
   DecimalLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -4156,6 +4344,7 @@ export interface ParentMaps {
     | ClassPrivateMethod
     | ClassPrivateProperty
     | ClassProperty
+    | FunctionDeclaration
     | Identifier
     | ObjectMethod
     | ObjectPattern
@@ -4167,6 +4356,8 @@ export interface ParentMaps {
   DirectiveLiteral: Directive;
   DoExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -4482,6 +4673,8 @@ export interface ParentMaps {
     | WithStatement;
   FunctionExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -4602,7 +4795,9 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   Identifier:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
     | ArkTSStructDeclaration
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrayPattern
     | ArrowFunctionExpression
@@ -4744,6 +4939,8 @@ export interface ParentMaps {
     | WithStatement;
   Import:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -4830,6 +5027,8 @@ export interface ParentMaps {
   ImportDefaultSpecifier: ImportDeclaration;
   ImportExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5009,6 +5208,8 @@ export interface ParentMaps {
   JSXClosingFragment: JSXFragment;
   JSXElement:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5080,6 +5281,8 @@ export interface ParentMaps {
   JSXExpressionContainer: JSXAttribute | JSXElement | JSXFragment;
   JSXFragment:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5186,6 +5389,8 @@ export interface ParentMaps {
     | WithStatement;
   LogicalExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5252,6 +5457,8 @@ export interface ParentMaps {
     | YieldExpression;
   MemberExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrayPattern
     | ArrowFunctionExpression
@@ -5320,6 +5527,8 @@ export interface ParentMaps {
     | YieldExpression;
   MetaProperty:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5411,6 +5620,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   ModuleExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5477,6 +5688,8 @@ export interface ParentMaps {
     | YieldExpression;
   NewExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5562,6 +5775,8 @@ export interface ParentMaps {
     | TSDeclareMethod;
   NullLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5729,6 +5944,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   NumericLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5797,6 +6014,8 @@ export interface ParentMaps {
     | YieldExpression;
   ObjectExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -5954,6 +6173,8 @@ export interface ParentMaps {
     | WithStatement;
   OptionalCallExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6045,6 +6266,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   OptionalMemberExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6111,6 +6334,8 @@ export interface ParentMaps {
     | YieldExpression;
   ParenthesizedExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6177,6 +6402,8 @@ export interface ParentMaps {
     | YieldExpression;
   PipelineBareFunction:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6243,6 +6470,8 @@ export interface ParentMaps {
     | YieldExpression;
   PipelinePrimaryTopicReference:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6309,6 +6538,8 @@ export interface ParentMaps {
     | YieldExpression;
   PipelineTopicExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6390,6 +6621,8 @@ export interface ParentMaps {
     | QualifiedTypeIdentifier;
   RecordExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6456,6 +6689,8 @@ export interface ParentMaps {
     | YieldExpression;
   RegExpLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6560,6 +6795,8 @@ export interface ParentMaps {
     | WithStatement;
   SequenceExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6637,6 +6874,8 @@ export interface ParentMaps {
   StaticBlock: ClassBody;
   StringLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6769,6 +7008,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   Super:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -6917,6 +7158,8 @@ export interface ParentMaps {
     | TemplateLiteral;
   TSAsExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrayPattern
     | ArrowFunctionExpression
@@ -7243,6 +7486,8 @@ export interface ParentMaps {
     | TemplateLiteral;
   TSInstantiationExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -7463,6 +7708,8 @@ export interface ParentMaps {
     | TemplateLiteral;
   TSNonNullExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrayPattern
     | ArrowFunctionExpression
@@ -7675,6 +7922,8 @@ export interface ParentMaps {
     | TemplateLiteral;
   TSSatisfiesExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrayPattern
     | ArrowFunctionExpression
@@ -7868,6 +8117,8 @@ export interface ParentMaps {
     | TSTypePredicate;
   TSTypeAssertion:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrayPattern
     | ArrowFunctionExpression
@@ -8158,6 +8409,8 @@ export interface ParentMaps {
     | TemplateLiteral;
   TaggedTemplateExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8225,6 +8478,8 @@ export interface ParentMaps {
   TemplateElement: TemplateLiteral;
   TemplateLiteral:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8292,6 +8547,8 @@ export interface ParentMaps {
     | YieldExpression;
   ThisExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8397,6 +8654,8 @@ export interface ParentMaps {
     | WithStatement;
   TopicReference:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8477,6 +8736,8 @@ export interface ParentMaps {
     | WithStatement;
   TupleExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8605,6 +8866,8 @@ export interface ParentMaps {
     | TypeParameter;
   TypeCastExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8735,6 +8998,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   UnaryExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8827,6 +9092,8 @@ export interface ParentMaps {
     | UnionTypeAnnotation;
   UpdateExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression
@@ -8972,6 +9239,8 @@ export interface ParentMaps {
     | WithStatement;
   YieldExpression:
     | ArkTSCallExpression
+    | ArkTSDoubleExclamationExpression
+    | ArkTSTwoWayBindingExpression
     | ArrayExpression
     | ArrowFunctionExpression
     | AssignmentExpression

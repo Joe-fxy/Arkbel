@@ -9,6 +9,7 @@
     "webpack": " webpack --mode development",
     "bootstrap": "make bootstrap",
     "codesandbox:build": "make build-no-bundle",
+    "build-bundle":"./make build-bundle",
     "build": "make build",
     "fix": "make fix",
     "lint": "make lint",

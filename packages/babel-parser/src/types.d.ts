@@ -204,6 +204,8 @@ export interface BodilessFunctionOrMethodBase extends HasDecorators {
   expression: boolean;
   typeParameters?: TypeParameterDeclarationBase | null;
   returnType?: TypeAnnotationBase | null;
+  // This is add for ArkTS
+  decorators?: Decorator[];
 }
 
 export interface FunctionBase extends BodilessFunctionOrMethodBase {
@@ -1713,6 +1715,16 @@ export interface ArkTSStructDeclaration extends HasDecorators {
   id: Identifier;
   body: ClassBody;
   decorators?: Decorator[];
+}
+
+export interface ArkTSDoubleExclamationExpression extends NodeBase {
+  type: "ArkTSDoubleExclamationExpression";
+  expression: Expression;
+}
+
+export interface ArkTSTwoWayBindingExpression extends NodeBase {
+  type: "ArkTSTwoWayBindingExpression";
+  expression: Expression;
 }
 
 // TODO: Fine-grained typing waiting for Arkble v2 implementation

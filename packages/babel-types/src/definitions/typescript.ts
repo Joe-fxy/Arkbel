@@ -565,6 +565,21 @@ defineType("TSNonNullExpression", {
   },
 });
 
+defineType("ArkTSTwoWayBindingExpression", {
+  aliases: ["Expression", "LVal", "PatternLike"],
+  visitor: ["expression"],
+  fields: {
+    expression: validateType("Expression"),
+  },
+});
+defineType("ArkTSDoubleExclamationExpression", {
+  aliases: ["Expression", "LVal", "PatternLike"],
+  visitor: ["expression"],
+  fields: {
+    expression: validateType("Expression"),
+  },
+});
+
 defineType("TSExportAssignment", {
   aliases: ["Statement"],
   visitor: ["expression"],

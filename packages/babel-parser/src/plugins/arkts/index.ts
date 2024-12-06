@@ -202,16 +202,10 @@ export default (superClass: ReturnType<typeof typescript>) =>
       if (node.expression.name === "Builder") {
         // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
         super.inBuilderFunction = true;
-        //To Delete
-        // this.BuilderFunction++;
-        // console.log(`Builder:${this.BuilderFunction}`);
       }
       if (node.expression.name === "Styles") {
         // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
         this.inStylesFunction = true;
-        //To Delete
-        // this.SytleFunction++;
-        // console.log(`Style:${this.StyleFunction}`);
       }
       return this.finishNode(node, "Decorator");
     }
@@ -224,19 +218,68 @@ export default (superClass: ReturnType<typeof typescript>) =>
         node.callee = expr;
         node.arguments = this.parseCallExpressionArguments(tt.parenR, false);
         this.toReferencedList(node.arguments);
-        if (node.callee.name === "Extend") {
+        if (
+          node.callee.name === "Extend" ||
+          node.callee.name === "AnimatableExtend"
+        ) {
           // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
           this.inExtendFunction = true;
           // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
           this.ExtendComponent = node.arguments[0];
-          //To Delete
-          // this.ExtendFunction++;
-          // console.log(`extend:${this.ExtendFunction}`);
         }
         return this.finishNode(node, "CallExpression");
       }
 
       return expr;
+    }
+    parseExprSubscripts(
+      refExpressionErrors?: ExpressionErrors | null,
+    ): N.Expression {
+      const startLoc = this.state.startLoc;
+      const potentialArrowAt = this.state.potentialArrowAt;
+      if (this.eat(tt.doubleDollar)) {
+        const expr = super.parseExprAtom(refExpressionErrors);
+        const doubleDollarExpression =
+          this.startNodeAt<N.ArkTSTwoWayBindingExpression>(startLoc);
+        doubleDollarExpression.expression = super.parseSubscripts(
+          expr,
+          startLoc,
+        );
+        return this.finishNode(
+          doubleDollarExpression,
+          "ArkTSTwoWayBindingExpression",
+        );
+      }
+      const expr = super.parseExprAtom(refExpressionErrors);
+
+      if (this.shouldExitDescending(expr, potentialArrowAt)) {
+        return expr;
+      }
+
+      return super.parseSubscripts(expr, startLoc);
+    }
+
+    parseSubscript(
+      base: N.Expression,
+
+      startLoc: Position,
+      noCalls: boolean | undefined | null,
+      state: N.ParseSubscriptState,
+    ): N.Expression {
+      if (!this.hasPrecedingLineBreak() && this.match(tt.doubleExclamation)) {
+        // !! for ArkTS
+        this.state.canStartJSXElement = false;
+        this.next();
+
+        const doubleExclamationExpression =
+          this.startNodeAt<N.ArkTSDoubleExclamationExpression>(startLoc);
+        doubleExclamationExpression.expression = base;
+        return this.finishNode(
+          doubleExclamationExpression,
+          "ArkTSDoubleExclamationExpression",
+        );
+      }
+      return super.parseSubscript(base, startLoc, noCalls, state);
     }
     // Intercept the parsing of struct method `build`
     parseFunctionBody(
@@ -245,12 +288,40 @@ export default (superClass: ReturnType<typeof typescript>) =>
       isMethod: boolean = false,
     ) {
       if (this.inStylesFunction) {
+        if (!this.inStructContext) {
+          const loc1 = {
+            start: {
+              line: 1,
+              column: 1,
+              index: 1,
+            },
+            end: {
+              line: 1,
+              column: 1,
+              index: 1,
+            },
+            filename: "undefined",
+            identifierName: "Styles",
+          };
+          const decorators_node: N.Decorator = {
+            type: "Decorator",
+            start: 1,
+            end: 1,
+            loc: loc1,
+            expression: {
+              type: "Identifier",
+              start: 1,
+              end: 1,
+              loc: loc1,
+              name: "Styles",
+            },
+          };
+          node.decorators = [decorators_node];
+        }
         const bodyNode = this.startNode<N.BlockStatement>();
         this.expect(tt.braceL);
         this.scope.enter(ScopeFlag.FUNCTION);
 
-        // Theoretically the body of `build` can only be one element (a UIComponent call),
-        // however for coherence with other function body parsing, we still parse it as an array.
         bodyNode.body = [];
 
         this.arktsParseExtendExpression(
@@ -264,12 +335,38 @@ export default (superClass: ReturnType<typeof typescript>) =>
         return;
       }
       if (this.inExtendFunction && !this.inStructContext) {
+        const loc1 = {
+          start: {
+            line: 1,
+            column: 1,
+            index: 1,
+          },
+          end: {
+            line: 1,
+            column: 1,
+            index: 1,
+          },
+          filename: "undefined",
+          identifierName: "Extend",
+        };
+        const decorators_node: N.Decorator = {
+          type: "Decorator",
+          start: 1,
+          end: 1,
+          loc: loc1,
+          expression: {
+            type: "Identifier",
+            start: 1,
+            end: 1,
+            loc: loc1,
+            name: "Extend",
+          },
+        };
+        node.decorators = [decorators_node];
         const bodyNode = this.startNode<N.BlockStatement>();
         this.expect(tt.braceL);
         this.scope.enter(ScopeFlag.FUNCTION);
 
-        // Theoretically the body of `build` can only be one element (a UIComponent call),
-        // however for coherence with other function body parsing, we still parse it as an array.
         bodyNode.body = [];
 
         this.arktsParseExtendExpression(
@@ -282,36 +379,42 @@ export default (superClass: ReturnType<typeof typescript>) =>
         node.body = this.finishNode(bodyNode, "BlockStatement");
         return;
       }
-      if (this.inStructContext && this.inBuilderFunction) {
+      if (this.inBuilderFunction) {
         this.inBuilderFunction = false;
+        if (!this.inStructContext) {
+          const loc1 = {
+            start: {
+              line: 1,
+              column: 1,
+              index: 1,
+            },
+            end: {
+              line: 1,
+              column: 1,
+              index: 1,
+            },
+            filename: "undefined",
+            identifierName: "Builder",
+          };
+          const decorators_node: N.Decorator = {
+            type: "Decorator",
+            start: 1,
+            end: 1,
+            loc: loc1,
+            expression: {
+              type: "Identifier",
+              start: 1,
+              end: 1,
+              loc: loc1,
+              name: "Builder",
+            },
+          };
+          node.decorators = [decorators_node];
+        }
         const bodyNode = this.startNode<N.BlockStatement>();
         this.expect(tt.braceL);
         this.scope.enter(ScopeFlag.FUNCTION);
-
-        // Theoretically the body of `build` can only be one element (a UIComponent call),
-        // however for coherence with other function body parsing, we still parse it as an array.
         bodyNode.body = [];
-
-        this.arktsParseBuildExpression(
-          bodyNode,
-          false,
-          ArkTSParseContext.TOP_FIRST,
-        );
-        this.scope.exit();
-        this.expect(tt.braceR);
-        node.body = this.finishNode(bodyNode, "BlockStatement");
-        return;
-      }
-      if (!this.inStructContext && this.inBuilderFunction) {
-        this.inBuilderFunction = false;
-        const bodyNode = this.startNode<N.BlockStatement>();
-        this.expect(tt.braceL);
-        this.scope.enter(ScopeFlag.FUNCTION);
-
-        // Theoretically the body of `build` can only be one element (a UIComponent call),
-        // however for coherence with other function body parsing, we still parse it as an array.
-        bodyNode.body = [];
-
         this.arktsParseBuildExpression(
           bodyNode,
           false,
@@ -377,8 +480,11 @@ export default (superClass: ReturnType<typeof typescript>) =>
      * * `(` - Call after member access
      */
     // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
-    arktsParseBuildExpression(node?, allowMultipleExpressions: boolean, context: ArkTSParseContext,) {
-      //console.log(node);
+    arktsParseBuildExpression(
+      node?,
+      allowMultipleExpressions: boolean,
+      context: ArkTSParseContext,
+    ) {
       if (node === undefined) {
         return node;
       } else if (this.match(tt._this)) {
@@ -456,8 +562,6 @@ export default (superClass: ReturnType<typeof typescript>) =>
         this.finishNode(expNode, "ExpressionStatement");
 
         expNode.expression = maybeNode ?? callNode;
-        // console.log("in Name");
-        // console.log(node);
         node.body.push(expNode);
 
         // Pass BlockStatement node in so that new nodes can be pushed into
@@ -562,7 +666,9 @@ export default (superClass: ReturnType<typeof typescript>) =>
     }
 
     // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
-    arktsParseExtendExpression(node?, allowMultipleExpressions: boolean,
+    arktsParseExtendExpression(
+      node?,
+      allowMultipleExpressions: boolean,
       context: ArkTSParseContext,
     ) {
       if (node === undefined) {
@@ -571,7 +677,7 @@ export default (superClass: ReturnType<typeof typescript>) =>
         if (node.type !== "" && node.type !== "MemberExpression") {
           return undefined;
         }
-        if (!this.inStructContext){
+        if (!this.inStructContext) {
           this.raise(Errors.UnexpectedToken, this.state.curPosition(), {
             unexpected: "this",
           });
@@ -597,7 +703,11 @@ export default (superClass: ReturnType<typeof typescript>) =>
         node.body.push(expNode);
 
         // Pass BlockStatement node in so that new nodes can be pushed into
-        this.arktsParseExtendExpression(node, allowMultipleExpressions, context);
+        this.arktsParseExtendExpression(
+          node,
+          allowMultipleExpressions,
+          context,
+        );
       } else if (this.inStylesFunction) {
         this.inStylesFunction = false;
         if (node.type !== "" && node.type !== "MemberExpression") {
@@ -720,14 +830,18 @@ export default (superClass: ReturnType<typeof typescript>) =>
       return node;
     }
     // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
-    arktsParseForeachExpression(node?, allowMultipleExpressions: boolean, context: ArkTSParseContext,) {
+    arktsParseForeachExpression(
+      node?,
+      allowMultipleExpressions: boolean,
+      context: ArkTSParseContext,
+    ) {
       if (node === undefined) {
         return node;
       } else if (this.match(tt._this)) {
         if (node.type !== "" && node.type !== "MemberExpression") {
           return undefined;
         }
-        if (!this.inStructContext){
+        if (!this.inStructContext) {
           this.raise(Errors.UnexpectedToken, this.state.curPosition(), {
             unexpected: "this",
           });
@@ -753,8 +867,12 @@ export default (superClass: ReturnType<typeof typescript>) =>
         node.body.push(expNode);
 
         // Pass BlockStatement node in so that new nodes can be pushed into
-        this.arktsParseForeachExpression(node, allowMultipleExpressions, context);
-      }else if (this.match(tt.name)) {
+        this.arktsParseForeachExpression(
+          node,
+          allowMultipleExpressions,
+          context,
+        );
+      } else if (this.match(tt.name)) {
         //             v
         // { A(){}.B() C() }
         // A new ExpressionStatement should start, but parameter `node` is not BlockStatement,

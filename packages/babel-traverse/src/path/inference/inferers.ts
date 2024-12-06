@@ -46,6 +46,18 @@ export function TSNonNullExpression(this: NodePath<t.TSNonNullExpression>) {
   return this.get("expression").getTypeAnnotation();
 }
 
+export function ArkTSDoubleExclamationExpression(
+  this: NodePath<t.ArkTSDoubleExclamationExpression>,
+) {
+  return this.get("expression").getTypeAnnotation();
+}
+
+export function ArkTSTwoWayBindingExpression(
+  this: NodePath<t.ArkTSTwoWayBindingExpression>,
+) {
+  return this.get("expression").getTypeAnnotation();
+}
+
 export function NewExpression(
   this: NodePath<t.NewExpression>,
   node: t.NewExpression,

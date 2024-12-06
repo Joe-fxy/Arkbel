@@ -788,6 +788,706 @@ Node {
 }
 `;
 
+exports[`arkts @AnimatableExtend Decorate Function in the top scope 1`] = `
+Node {
+  "comments": Array [],
+  "end": 59,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 59,
+      "index": 59,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 58,
+              "expression": Node {
+                "arguments": Array [
+                  Node {
+                    "end": 57,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 57,
+                        "index": 57,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "a",
+                      "start": Position {
+                        "column": 56,
+                        "index": 56,
+                        "line": 1,
+                      },
+                    },
+                    "name": "a",
+                    "start": 56,
+                    "type": "Identifier",
+                  },
+                ],
+                "callee": Node {
+                  "end": 55,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 55,
+                      "index": 55,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 47,
+                      "index": 47,
+                      "line": 1,
+                    },
+                  },
+                  "object": Node {
+                    "arguments": Array [],
+                    "callee": Node {
+                      "end": 22,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 22,
+                          "index": 22,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": "Text",
+                        "start": Position {
+                          "column": 18,
+                          "index": 18,
+                          "line": 1,
+                        },
+                      },
+                      "name": "Text",
+                      "start": 18,
+                      "type": "Identifier",
+                    },
+                    "end": 47,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 47,
+                        "index": 47,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 47,
+                        "index": 47,
+                        "line": 1,
+                      },
+                    },
+                    "start": 47,
+                    "type": "ArkTSCallExpression",
+                  },
+                  "property": Node {
+                    "end": 55,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 55,
+                        "index": 55,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "setsize",
+                      "start": Position {
+                        "column": 48,
+                        "index": 48,
+                        "line": 1,
+                      },
+                    },
+                    "name": "setsize",
+                    "start": 48,
+                    "type": "Identifier",
+                  },
+                  "start": 47,
+                  "type": "MemberExpression",
+                },
+                "end": 58,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 58,
+                    "index": 58,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 47,
+                    "index": 47,
+                    "line": 1,
+                  },
+                },
+                "start": 47,
+                "type": "ArkTSCallExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 58,
+                  "index": 58,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 47,
+                  "index": 47,
+                  "line": 1,
+                },
+              },
+              "start": 47,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "end": 59,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 59,
+              "index": 59,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 46,
+              "index": 46,
+              "line": 1,
+            },
+          },
+          "start": 46,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Extend",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Extend",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Extend",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
+        "end": 59,
+        "generator": false,
+        "id": Node {
+          "end": 36,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 36,
+              "index": 36,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "Foo",
+            "start": Position {
+              "column": 33,
+              "index": 33,
+              "line": 1,
+            },
+          },
+          "name": "Foo",
+          "start": 33,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 59,
+            "index": 59,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 24,
+            "index": 24,
+            "line": 1,
+          },
+        },
+        "params": Array [
+          Node {
+            "end": 45,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 45,
+                "index": 45,
+                "line": 1,
+              },
+              "filename": undefined,
+              "identifierName": "a",
+              "start": Position {
+                "column": 37,
+                "index": 37,
+                "line": 1,
+              },
+            },
+            "name": "a",
+            "start": 37,
+            "type": "Identifier",
+            "typeAnnotation": Node {
+              "end": 45,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 45,
+                  "index": 45,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 38,
+                  "index": 38,
+                  "line": 1,
+                },
+              },
+              "start": 38,
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": Node {
+                "end": 45,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 45,
+                    "index": 45,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 39,
+                    "index": 39,
+                    "line": 1,
+                  },
+                },
+                "start": 39,
+                "type": "TSNumberKeyword",
+              },
+            },
+          },
+        ],
+        "start": 24,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 59,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 59,
+        "index": 59,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts @AnimatableExtend Decorate Function in the top space 1`] = `
+Node {
+  "comments": Array [],
+  "end": 59,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 59,
+      "index": 59,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 58,
+              "expression": Node {
+                "arguments": Array [
+                  Node {
+                    "end": 57,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 57,
+                        "index": 57,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "a",
+                      "start": Position {
+                        "column": 56,
+                        "index": 56,
+                        "line": 1,
+                      },
+                    },
+                    "name": "a",
+                    "start": 56,
+                    "type": "Identifier",
+                  },
+                ],
+                "callee": Node {
+                  "end": 55,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 55,
+                      "index": 55,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 47,
+                      "index": 47,
+                      "line": 1,
+                    },
+                  },
+                  "object": Node {
+                    "arguments": Array [],
+                    "callee": Node {
+                      "end": 22,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 22,
+                          "index": 22,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": "Text",
+                        "start": Position {
+                          "column": 18,
+                          "index": 18,
+                          "line": 1,
+                        },
+                      },
+                      "name": "Text",
+                      "start": 18,
+                      "type": "Identifier",
+                    },
+                    "end": 47,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 47,
+                        "index": 47,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 47,
+                        "index": 47,
+                        "line": 1,
+                      },
+                    },
+                    "start": 47,
+                    "type": "ArkTSCallExpression",
+                  },
+                  "property": Node {
+                    "end": 55,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 55,
+                        "index": 55,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "setsize",
+                      "start": Position {
+                        "column": 48,
+                        "index": 48,
+                        "line": 1,
+                      },
+                    },
+                    "name": "setsize",
+                    "start": 48,
+                    "type": "Identifier",
+                  },
+                  "start": 47,
+                  "type": "MemberExpression",
+                },
+                "end": 58,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 58,
+                    "index": 58,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 47,
+                    "index": 47,
+                    "line": 1,
+                  },
+                },
+                "start": 47,
+                "type": "ArkTSCallExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 58,
+                  "index": 58,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 47,
+                  "index": 47,
+                  "line": 1,
+                },
+              },
+              "start": 47,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "end": 59,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 59,
+              "index": 59,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 46,
+              "index": 46,
+              "line": 1,
+            },
+          },
+          "start": 46,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Extend",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Extend",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Extend",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
+        "end": 59,
+        "generator": false,
+        "id": Node {
+          "end": 36,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 36,
+              "index": 36,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "Foo",
+            "start": Position {
+              "column": 33,
+              "index": 33,
+              "line": 1,
+            },
+          },
+          "name": "Foo",
+          "start": 33,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 59,
+            "index": 59,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 24,
+            "index": 24,
+            "line": 1,
+          },
+        },
+        "params": Array [
+          Node {
+            "end": 45,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 45,
+                "index": 45,
+                "line": 1,
+              },
+              "filename": undefined,
+              "identifierName": "a",
+              "start": Position {
+                "column": 37,
+                "index": 37,
+                "line": 1,
+              },
+            },
+            "name": "a",
+            "start": 37,
+            "type": "Identifier",
+            "typeAnnotation": Node {
+              "end": 45,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 45,
+                  "index": 45,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 38,
+                  "index": 38,
+                  "line": 1,
+                },
+              },
+              "start": 38,
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": Node {
+                "end": 45,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 45,
+                    "index": 45,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 39,
+                    "index": 39,
+                    "line": 1,
+                  },
+                },
+                "start": 39,
+                "type": "TSNumberKeyword",
+              },
+            },
+          },
+        ],
+        "start": 24,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 59,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 59,
+        "index": 59,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
 exports[`arkts @Builder Decorate Function in a struct 1`] = `
 Node {
   "comments": Array [],
@@ -2267,6 +2967,296 @@ Node {
 }
 `;
 
+exports[`arkts @Builder Decorate Function in top scope 1`] = `
+Node {
+  "comments": Array [],
+  "end": 40,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 40,
+      "index": 40,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 39,
+              "expression": Node {
+                "arguments": Array [],
+                "callee": Node {
+                  "end": 35,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 35,
+                      "index": 35,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": "Row",
+                    "start": Position {
+                      "column": 32,
+                      "index": 32,
+                      "line": 1,
+                    },
+                  },
+                  "name": "Row",
+                  "start": 32,
+                  "type": "Identifier",
+                },
+                "end": 39,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 39,
+                    "index": 39,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 32,
+                    "index": 32,
+                    "line": 1,
+                  },
+                },
+                "start": 32,
+                "trailingClosure": Node {
+                  "body": Array [],
+                  "end": 39,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 39,
+                      "index": 39,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 37,
+                      "index": 37,
+                      "line": 1,
+                    },
+                  },
+                  "start": 37,
+                  "type": "BlockStatement",
+                },
+                "type": "ArkTSCallExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 39,
+                  "index": 39,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 32,
+                  "index": 32,
+                  "line": 1,
+                },
+              },
+              "start": 32,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "end": 40,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 40,
+              "index": 40,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 31,
+              "index": 31,
+              "line": 1,
+            },
+          },
+          "start": 31,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Builder",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Builder",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Builder",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
+        "end": 40,
+        "generator": false,
+        "id": Node {
+          "end": 21,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 21,
+              "index": 21,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "Foo",
+            "start": Position {
+              "column": 18,
+              "index": 18,
+              "line": 1,
+            },
+          },
+          "name": "Foo",
+          "start": 18,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 40,
+            "index": 40,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 9,
+            "index": 9,
+            "line": 1,
+          },
+        },
+        "params": Array [
+          Node {
+            "end": 30,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 30,
+                "index": 30,
+                "line": 1,
+              },
+              "filename": undefined,
+              "identifierName": "a",
+              "start": Position {
+                "column": 22,
+                "index": 22,
+                "line": 1,
+              },
+            },
+            "name": "a",
+            "start": 22,
+            "type": "Identifier",
+            "typeAnnotation": Node {
+              "end": 30,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 30,
+                  "index": 30,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 23,
+                  "index": 23,
+                  "line": 1,
+                },
+              },
+              "start": 23,
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": Node {
+                "end": 30,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 30,
+                    "index": 30,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 24,
+                    "index": 24,
+                    "line": 1,
+                  },
+                },
+                "start": 24,
+                "type": "TSStringKeyword",
+              },
+            },
+          },
+        ],
+        "start": 9,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 40,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 40,
+        "index": 40,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
 exports[`arkts @Builder Decorate Function in top space 1`] = `
 Node {
   "comments": Array [],
@@ -2950,6 +3940,397 @@ Node {
 }
 `;
 
+exports[`arkts @Builderparam Decorate property use function in top scope 1`] = `
+Node {
+  "comments": Array [],
+  "end": 67,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 67,
+      "index": 67,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [],
+          "end": 24,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 24,
+              "index": 24,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 22,
+              "index": 22,
+              "line": 1,
+            },
+          },
+          "start": 22,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Builder",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Builder",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Builder",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
+        "end": 24,
+        "generator": false,
+        "id": Node {
+          "end": 19,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 19,
+              "index": 19,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "f",
+            "start": Position {
+              "column": 18,
+              "index": 18,
+              "line": 1,
+            },
+          },
+          "name": "f",
+          "start": 18,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 24,
+            "index": 24,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 9,
+            "index": 9,
+            "line": 1,
+          },
+        },
+        "params": Array [],
+        "start": 9,
+        "type": "FunctionDeclaration",
+      },
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "computed": false,
+              "decorators": Array [
+                Node {
+                  "end": 47,
+                  "expression": Node {
+                    "end": 47,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 47,
+                        "index": 47,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "BuilderParam",
+                      "start": Position {
+                        "column": 35,
+                        "index": 35,
+                        "line": 1,
+                      },
+                    },
+                    "name": "BuilderParam",
+                    "start": 35,
+                    "type": "Identifier",
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 47,
+                      "index": 47,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 34,
+                      "index": 34,
+                      "line": 1,
+                    },
+                  },
+                  "start": 34,
+                  "type": "Decorator",
+                },
+              ],
+              "end": 66,
+              "key": Node {
+                "end": 49,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 49,
+                    "index": 49,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "a",
+                  "start": Position {
+                    "column": 48,
+                    "index": 48,
+                    "line": 1,
+                  },
+                },
+                "name": "a",
+                "start": 48,
+                "type": "Identifier",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 66,
+                  "index": 66,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 34,
+                  "index": 34,
+                  "line": 1,
+                },
+              },
+              "start": 34,
+              "static": false,
+              "type": "ClassProperty",
+              "typeAnnotation": Node {
+                "end": 61,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 61,
+                    "index": 61,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 49,
+                    "index": 49,
+                    "line": 1,
+                  },
+                },
+                "start": 49,
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": Node {
+                  "end": 61,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 61,
+                      "index": 61,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 51,
+                      "index": 51,
+                      "line": 1,
+                    },
+                  },
+                  "parameters": Array [],
+                  "start": 51,
+                  "type": "TSFunctionType",
+                  "typeAnnotation": Node {
+                    "end": 61,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 61,
+                        "index": 61,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 54,
+                        "index": 54,
+                        "line": 1,
+                      },
+                    },
+                    "start": 54,
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": Node {
+                      "end": 61,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 61,
+                          "index": 61,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 57,
+                          "index": 57,
+                          "line": 1,
+                        },
+                      },
+                      "start": 57,
+                      "type": "TSVoidKeyword",
+                    },
+                  },
+                  "typeParameters": undefined,
+                },
+              },
+              "value": Node {
+                "end": 65,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 65,
+                    "index": 65,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "f",
+                  "start": Position {
+                    "column": 64,
+                    "index": 64,
+                    "line": 1,
+                  },
+                },
+                "name": "f",
+                "start": 64,
+                "type": "Identifier",
+              },
+            },
+          ],
+          "end": 67,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 67,
+              "index": 67,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 33,
+              "index": 33,
+              "line": 1,
+            },
+          },
+          "start": 33,
+          "type": "ClassBody",
+        },
+        "end": 67,
+        "id": Node {
+          "end": 33,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 33,
+              "index": 33,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 32,
+              "index": 32,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 32,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 67,
+            "index": 67,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 25,
+            "index": 25,
+            "line": 1,
+          },
+        },
+        "start": 25,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 67,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 67,
+        "index": 67,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
 exports[`arkts @Builderparam Decorate property use function in top space 1`] = `
 Node {
   "comments": Array [],
@@ -3281,6 +4662,356 @@ Node {
       "end": Position {
         "column": 67,
         "index": 67,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts @Extend Decorate Function in the top scope 1`] = `
+Node {
+  "comments": Array [],
+  "end": 49,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 49,
+      "index": 49,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 48,
+              "expression": Node {
+                "arguments": Array [
+                  Node {
+                    "end": 47,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 47,
+                        "index": 47,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "a",
+                      "start": Position {
+                        "column": 46,
+                        "index": 46,
+                        "line": 1,
+                      },
+                    },
+                    "name": "a",
+                    "start": 46,
+                    "type": "Identifier",
+                  },
+                ],
+                "callee": Node {
+                  "end": 45,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 45,
+                      "index": 45,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 37,
+                      "index": 37,
+                      "line": 1,
+                    },
+                  },
+                  "object": Node {
+                    "arguments": Array [],
+                    "callee": Node {
+                      "end": 12,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 12,
+                          "index": 12,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": "Text",
+                        "start": Position {
+                          "column": 8,
+                          "index": 8,
+                          "line": 1,
+                        },
+                      },
+                      "name": "Text",
+                      "start": 8,
+                      "type": "Identifier",
+                    },
+                    "end": 37,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 37,
+                        "index": 37,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 37,
+                        "index": 37,
+                        "line": 1,
+                      },
+                    },
+                    "start": 37,
+                    "type": "ArkTSCallExpression",
+                  },
+                  "property": Node {
+                    "end": 45,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 45,
+                        "index": 45,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "setsize",
+                      "start": Position {
+                        "column": 38,
+                        "index": 38,
+                        "line": 1,
+                      },
+                    },
+                    "name": "setsize",
+                    "start": 38,
+                    "type": "Identifier",
+                  },
+                  "start": 37,
+                  "type": "MemberExpression",
+                },
+                "end": 48,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 48,
+                    "index": 48,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 37,
+                    "index": 37,
+                    "line": 1,
+                  },
+                },
+                "start": 37,
+                "type": "ArkTSCallExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 48,
+                  "index": 48,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 37,
+                  "index": 37,
+                  "line": 1,
+                },
+              },
+              "start": 37,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "end": 49,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 49,
+              "index": 49,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 36,
+              "index": 36,
+              "line": 1,
+            },
+          },
+          "start": 36,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Extend",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Extend",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Extend",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
+        "end": 49,
+        "generator": false,
+        "id": Node {
+          "end": 26,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 26,
+              "index": 26,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "Foo",
+            "start": Position {
+              "column": 23,
+              "index": 23,
+              "line": 1,
+            },
+          },
+          "name": "Foo",
+          "start": 23,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 49,
+            "index": 49,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 14,
+            "index": 14,
+            "line": 1,
+          },
+        },
+        "params": Array [
+          Node {
+            "end": 35,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 35,
+                "index": 35,
+                "line": 1,
+              },
+              "filename": undefined,
+              "identifierName": "a",
+              "start": Position {
+                "column": 27,
+                "index": 27,
+                "line": 1,
+              },
+            },
+            "name": "a",
+            "start": 27,
+            "type": "Identifier",
+            "typeAnnotation": Node {
+              "end": 35,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 35,
+                  "index": 35,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 28,
+                  "index": 28,
+                  "line": 1,
+                },
+              },
+              "start": 28,
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": Node {
+                "end": 35,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 35,
+                    "index": 35,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 29,
+                    "index": 29,
+                    "line": 1,
+                  },
+                },
+                "start": 29,
+                "type": "TSNumberKeyword",
+              },
+            },
+          },
+        ],
+        "start": 14,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 49,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 49,
+        "index": 49,
         "line": 1,
       },
       "filename": undefined,
@@ -5348,6 +7079,596 @@ Node {
           "start": 22,
           "type": "BlockStatement",
         },
+        "end": 35,
+        "generator": false,
+        "id": Node {
+          "end": 20,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 20,
+              "index": 20,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "Foo",
+            "start": Position {
+              "column": 17,
+              "index": 17,
+              "line": 1,
+            },
+          },
+          "name": "Foo",
+          "start": 17,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 35,
+            "index": 35,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 8,
+            "index": 8,
+            "line": 1,
+          },
+        },
+        "params": Array [],
+        "start": 8,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 35,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 35,
+        "index": 35,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts @Styles Decorate Function in top-scope 1`] = `
+Node {
+  "comments": Array [],
+  "end": 35,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 35,
+      "index": 35,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 34,
+              "expression": Node {
+                "arguments": Array [
+                  Node {
+                    "end": 33,
+                    "extra": Object {
+                      "raw": "2",
+                      "rawValue": 2,
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 33,
+                        "index": 33,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 32,
+                        "index": 32,
+                        "line": 1,
+                      },
+                    },
+                    "start": 32,
+                    "type": "NumericLiteral",
+                    "value": 2,
+                  },
+                ],
+                "callee": Node {
+                  "end": 31,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 31,
+                      "index": 31,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 23,
+                      "index": 23,
+                      "line": 1,
+                    },
+                  },
+                  "object": Node {
+                    "arguments": Array [],
+                    "callee": Node {
+                      "end": 23,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 23,
+                          "index": 23,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": "Styles_use",
+                        "start": Position {
+                          "column": 23,
+                          "index": 23,
+                          "line": 1,
+                        },
+                      },
+                      "name": "Styles_use",
+                      "start": 23,
+                      "type": "Identifier",
+                    },
+                    "end": 23,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 23,
+                        "index": 23,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 23,
+                        "index": 23,
+                        "line": 1,
+                      },
+                    },
+                    "start": 23,
+                    "type": "ArkTSCallExpression",
+                  },
+                  "property": Node {
+                    "end": 31,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 31,
+                        "index": 31,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "setsize",
+                      "start": Position {
+                        "column": 24,
+                        "index": 24,
+                        "line": 1,
+                      },
+                    },
+                    "name": "setsize",
+                    "start": 24,
+                    "type": "Identifier",
+                  },
+                  "start": 23,
+                  "type": "MemberExpression",
+                },
+                "end": 34,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 34,
+                    "index": 34,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 23,
+                    "index": 23,
+                    "line": 1,
+                  },
+                },
+                "start": 23,
+                "type": "ArkTSCallExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 34,
+                  "index": 34,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 23,
+                  "index": 23,
+                  "line": 1,
+                },
+              },
+              "start": 23,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "end": 35,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 35,
+              "index": 35,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 22,
+              "index": 22,
+              "line": 1,
+            },
+          },
+          "start": 22,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Styles",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Styles",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Styles",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
+        "end": 35,
+        "generator": false,
+        "id": Node {
+          "end": 20,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 20,
+              "index": 20,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "Foo",
+            "start": Position {
+              "column": 17,
+              "index": 17,
+              "line": 1,
+            },
+          },
+          "name": "Foo",
+          "start": 17,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 35,
+            "index": 35,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 8,
+            "index": 8,
+            "line": 1,
+          },
+        },
+        "params": Array [],
+        "start": 8,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 35,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 35,
+        "index": 35,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts @Styles Decorate Function in top-space 1`] = `
+Node {
+  "comments": Array [],
+  "end": 35,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 35,
+      "index": 35,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 34,
+              "expression": Node {
+                "arguments": Array [
+                  Node {
+                    "end": 33,
+                    "extra": Object {
+                      "raw": "2",
+                      "rawValue": 2,
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 33,
+                        "index": 33,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 32,
+                        "index": 32,
+                        "line": 1,
+                      },
+                    },
+                    "start": 32,
+                    "type": "NumericLiteral",
+                    "value": 2,
+                  },
+                ],
+                "callee": Node {
+                  "end": 31,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 31,
+                      "index": 31,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 23,
+                      "index": 23,
+                      "line": 1,
+                    },
+                  },
+                  "object": Node {
+                    "arguments": Array [],
+                    "callee": Node {
+                      "end": 23,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 23,
+                          "index": 23,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": "Styles_use",
+                        "start": Position {
+                          "column": 23,
+                          "index": 23,
+                          "line": 1,
+                        },
+                      },
+                      "name": "Styles_use",
+                      "start": 23,
+                      "type": "Identifier",
+                    },
+                    "end": 23,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 23,
+                        "index": 23,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 23,
+                        "index": 23,
+                        "line": 1,
+                      },
+                    },
+                    "start": 23,
+                    "type": "ArkTSCallExpression",
+                  },
+                  "property": Node {
+                    "end": 31,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 31,
+                        "index": 31,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "setsize",
+                      "start": Position {
+                        "column": 24,
+                        "index": 24,
+                        "line": 1,
+                      },
+                    },
+                    "name": "setsize",
+                    "start": 24,
+                    "type": "Identifier",
+                  },
+                  "start": 23,
+                  "type": "MemberExpression",
+                },
+                "end": 34,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 34,
+                    "index": 34,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 23,
+                    "index": 23,
+                    "line": 1,
+                  },
+                },
+                "start": 23,
+                "type": "ArkTSCallExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 34,
+                  "index": 34,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 23,
+                  "index": 23,
+                  "line": 1,
+                },
+              },
+              "start": 23,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "end": 35,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 35,
+              "index": 35,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 22,
+              "index": 22,
+              "line": 1,
+            },
+          },
+          "start": 22,
+          "type": "BlockStatement",
+        },
+        "decorators": Array [
+          Object {
+            "end": 1,
+            "expression": Object {
+              "end": 1,
+              "loc": Object {
+                "end": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+                "filename": "undefined",
+                "identifierName": "Extend",
+                "start": Object {
+                  "column": 1,
+                  "index": 1,
+                  "line": 1,
+                },
+              },
+              "name": "Extend",
+              "start": 1,
+              "type": "Identifier",
+            },
+            "loc": Object {
+              "end": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+              "filename": "undefined",
+              "identifierName": "Extend",
+              "start": Object {
+                "column": 1,
+                "index": 1,
+                "line": 1,
+              },
+            },
+            "start": 1,
+            "type": "Decorator",
+          },
+        ],
         "end": 35,
         "generator": false,
         "id": Node {
@@ -17856,6 +20177,3082 @@ Node {
       "end": Position {
         "column": 48,
         "index": 48,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding use '!!' 1`] = `
+Node {
+  "comments": Array [],
+  "end": 37,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 37,
+      "index": 37,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 35,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 34,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 34,
+                              "index": 34,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 22,
+                              "index": 22,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 33,
+                              "key": Node {
+                                "end": 24,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 24,
+                                    "index": 24,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 23,
+                                    "index": 23,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 23,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 33,
+                                  "index": 33,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 23,
+                                  "index": 23,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 23,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "end": 33,
+                                "expression": Node {
+                                  "end": 32,
+                                  "expression": Node {
+                                    "computed": false,
+                                    "end": 31,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 31,
+                                        "index": 31,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": undefined,
+                                      "start": Position {
+                                        "column": 25,
+                                        "index": 25,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "object": Node {
+                                      "end": 29,
+                                      "loc": SourceLocation {
+                                        "end": Position {
+                                          "column": 29,
+                                          "index": 29,
+                                          "line": 1,
+                                        },
+                                        "filename": undefined,
+                                        "identifierName": undefined,
+                                        "start": Position {
+                                          "column": 25,
+                                          "index": 25,
+                                          "line": 1,
+                                        },
+                                      },
+                                      "start": 25,
+                                      "type": "ThisExpression",
+                                    },
+                                    "property": Node {
+                                      "end": 31,
+                                      "loc": SourceLocation {
+                                        "end": Position {
+                                          "column": 31,
+                                          "index": 31,
+                                          "line": 1,
+                                        },
+                                        "filename": undefined,
+                                        "identifierName": "t",
+                                        "start": Position {
+                                          "column": 30,
+                                          "index": 30,
+                                          "line": 1,
+                                        },
+                                      },
+                                      "name": "t",
+                                      "start": 30,
+                                      "type": "Identifier",
+                                    },
+                                    "start": 25,
+                                    "type": "MemberExpression",
+                                  },
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 32,
+                                      "index": 32,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": undefined,
+                                    "start": Position {
+                                      "column": 25,
+                                      "index": 25,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "start": 25,
+                                  "type": "TSNonNullExpression",
+                                },
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 33,
+                                    "index": 33,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 25,
+                                    "index": 25,
+                                    "line": 1,
+                                  },
+                                },
+                                "start": 25,
+                                "type": "TSNonNullExpression",
+                              },
+                            },
+                          ],
+                          "start": 22,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 21,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 21,
+                            "index": 21,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 17,
+                            "index": 17,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 17,
+                        "type": "Identifier",
+                      },
+                      "end": 35,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 35,
+                          "index": 35,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 17,
+                          "index": 17,
+                          "line": 1,
+                        },
+                      },
+                      "start": 17,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 35,
+                        "index": 35,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 17,
+                        "index": 17,
+                        "line": 1,
+                      },
+                    },
+                    "start": 17,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 36,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 36,
+                    "index": 36,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 16,
+                    "index": 16,
+                    "line": 1,
+                  },
+                },
+                "start": 16,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 36,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 14,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 14,
+                    "index": 14,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 9,
+                    "index": 9,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 9,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 36,
+                  "index": 36,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 9,
+                  "index": 9,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 9,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 37,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 37,
+              "index": 37,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+          },
+          "start": 8,
+          "type": "ClassBody",
+        },
+        "end": 37,
+        "id": Node {
+          "end": 8,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 7,
+              "index": 7,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 7,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 37,
+            "index": 37,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 37,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 37,
+        "index": 37,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding use '$$' 1`] = `
+Node {
+  "comments": Array [],
+  "end": 37,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 37,
+      "index": 37,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 35,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 34,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 34,
+                              "index": 34,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 22,
+                              "index": 22,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 33,
+                              "key": Node {
+                                "end": 24,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 24,
+                                    "index": 24,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 23,
+                                    "index": 23,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 23,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 33,
+                                  "index": 33,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 23,
+                                  "index": 23,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 23,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "computed": false,
+                                "end": 33,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 33,
+                                    "index": 33,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 25,
+                                    "index": 25,
+                                    "line": 1,
+                                  },
+                                },
+                                "object": Node {
+                                  "end": 31,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 31,
+                                      "index": 31,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": "$$this",
+                                    "start": Position {
+                                      "column": 25,
+                                      "index": 25,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "name": "$$this",
+                                  "start": 25,
+                                  "type": "Identifier",
+                                },
+                                "property": Node {
+                                  "end": 33,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 33,
+                                      "index": 33,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": "t",
+                                    "start": Position {
+                                      "column": 32,
+                                      "index": 32,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "name": "t",
+                                  "start": 32,
+                                  "type": "Identifier",
+                                },
+                                "start": 25,
+                                "type": "MemberExpression",
+                              },
+                            },
+                          ],
+                          "start": 22,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 21,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 21,
+                            "index": 21,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 17,
+                            "index": 17,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 17,
+                        "type": "Identifier",
+                      },
+                      "end": 35,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 35,
+                          "index": 35,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 17,
+                          "index": 17,
+                          "line": 1,
+                        },
+                      },
+                      "start": 17,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 35,
+                        "index": 35,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 17,
+                        "index": 17,
+                        "line": 1,
+                      },
+                    },
+                    "start": 17,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 36,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 36,
+                    "index": 36,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 16,
+                    "index": 16,
+                    "line": 1,
+                  },
+                },
+                "start": 16,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 36,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 14,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 14,
+                    "index": 14,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 9,
+                    "index": 9,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 9,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 36,
+                  "index": 36,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 9,
+                  "index": 9,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 9,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 37,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 37,
+              "index": 37,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+          },
+          "start": 8,
+          "type": "ClassBody",
+        },
+        "end": 37,
+        "id": Node {
+          "end": 8,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 7,
+              "index": 7,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 7,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 37,
+            "index": 37,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 37,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 37,
+        "index": 37,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding variable use '!!' ,and use expression with double '!'  1`] = `
+Node {
+  "comments": Array [],
+  "end": 81,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 81,
+      "index": 81,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "argument": Node {
+                "argument": Node {
+                  "end": 42,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 42,
+                      "index": 42,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": "s",
+                    "start": Position {
+                      "column": 41,
+                      "index": 41,
+                      "line": 1,
+                    },
+                  },
+                  "name": "s",
+                  "start": 41,
+                  "type": "Identifier",
+                },
+                "end": 42,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 42,
+                    "index": 42,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 39,
+                    "index": 39,
+                    "line": 1,
+                  },
+                },
+                "operator": "!",
+                "prefix": true,
+                "start": 39,
+                "type": "UnaryExpression",
+              },
+              "end": 42,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 42,
+                  "index": 42,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 31,
+                  "index": 31,
+                  "line": 1,
+                },
+              },
+              "start": 32,
+              "type": "ReturnStatement",
+            },
+          ],
+          "directives": Array [],
+          "end": 43,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 43,
+              "index": 43,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 31,
+              "index": 31,
+              "line": 1,
+            },
+          },
+          "start": 31,
+          "type": "BlockStatement",
+        },
+        "end": 43,
+        "generator": false,
+        "id": Node {
+          "end": 10,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 10,
+              "index": 10,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 9,
+              "index": 9,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 9,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 43,
+            "index": 43,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "params": Array [
+          Node {
+            "end": 30,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 30,
+                "index": 30,
+                "line": 1,
+              },
+              "filename": undefined,
+              "identifierName": "s",
+              "start": Position {
+                "column": 11,
+                "index": 11,
+                "line": 1,
+              },
+            },
+            "name": "s",
+            "start": 11,
+            "type": "Identifier",
+            "typeAnnotation": Node {
+              "end": 30,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 30,
+                  "index": 30,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 12,
+                  "index": 12,
+                  "line": 1,
+                },
+              },
+              "start": 12,
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": Node {
+                "end": 30,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 30,
+                    "index": 30,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 13,
+                    "index": 13,
+                    "line": 1,
+                  },
+                },
+                "start": 13,
+                "type": "TSUnionType",
+                "types": Array [
+                  Node {
+                    "end": 20,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 20,
+                        "index": 20,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 13,
+                        "index": 13,
+                        "line": 1,
+                      },
+                    },
+                    "start": 13,
+                    "type": "TSBooleanKeyword",
+                  },
+                  Node {
+                    "end": 30,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 30,
+                        "index": 30,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 21,
+                        "index": 21,
+                        "line": 1,
+                      },
+                    },
+                    "start": 21,
+                    "type": "TSUndefinedKeyword",
+                  },
+                ],
+              },
+            },
+          },
+        ],
+        "start": 0,
+        "type": "FunctionDeclaration",
+      },
+      Node {
+        "end": 44,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 44,
+            "index": 44,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 43,
+            "index": 43,
+            "line": 1,
+          },
+        },
+        "start": 43,
+        "type": "EmptyStatement",
+      },
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 79,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 78,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 78,
+                              "index": 78,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 66,
+                              "index": 66,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 77,
+                              "key": Node {
+                                "end": 68,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 68,
+                                    "index": 68,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 67,
+                                    "index": 67,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 67,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 77,
+                                  "index": 77,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 67,
+                                  "index": 67,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 67,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "end": 77,
+                                "expression": Node {
+                                  "computed": false,
+                                  "end": 75,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 75,
+                                      "index": 75,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": undefined,
+                                    "start": Position {
+                                      "column": 69,
+                                      "index": 69,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "object": Node {
+                                    "end": 73,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 73,
+                                        "index": 73,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": undefined,
+                                      "start": Position {
+                                        "column": 69,
+                                        "index": 69,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "start": 69,
+                                    "type": "ThisExpression",
+                                  },
+                                  "property": Node {
+                                    "end": 75,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 75,
+                                        "index": 75,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": "t",
+                                      "start": Position {
+                                        "column": 74,
+                                        "index": 74,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "name": "t",
+                                    "start": 74,
+                                    "type": "Identifier",
+                                  },
+                                  "start": 69,
+                                  "type": "MemberExpression",
+                                },
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 77,
+                                    "index": 77,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 69,
+                                    "index": 69,
+                                    "line": 1,
+                                  },
+                                },
+                                "start": 69,
+                                "type": "ArkTSDoubleExclamationExpression",
+                              },
+                            },
+                          ],
+                          "start": 66,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 65,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 65,
+                            "index": 65,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 61,
+                            "index": 61,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 61,
+                        "type": "Identifier",
+                      },
+                      "end": 79,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 79,
+                          "index": 79,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 61,
+                          "index": 61,
+                          "line": 1,
+                        },
+                      },
+                      "start": 61,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 79,
+                        "index": 79,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 61,
+                        "index": 61,
+                        "line": 1,
+                      },
+                    },
+                    "start": 61,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 80,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 80,
+                    "index": 80,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 60,
+                    "index": 60,
+                    "line": 1,
+                  },
+                },
+                "start": 60,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 80,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 58,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 58,
+                    "index": 58,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 53,
+                    "index": 53,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 53,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 80,
+                  "index": 80,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 53,
+                  "index": 53,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 53,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 81,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 81,
+              "index": 81,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 52,
+              "index": 52,
+              "line": 1,
+            },
+          },
+          "start": 52,
+          "type": "ClassBody",
+        },
+        "end": 81,
+        "id": Node {
+          "end": 52,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 52,
+              "index": 52,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 51,
+              "index": 51,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 51,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 81,
+            "index": 81,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 44,
+            "index": 44,
+            "line": 1,
+          },
+        },
+        "start": 44,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 81,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 81,
+        "index": 81,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding variable use '!!' 1`] = `
+Node {
+  "comments": Array [],
+  "end": 37,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 37,
+      "index": 37,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 35,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 34,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 34,
+                              "index": 34,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 22,
+                              "index": 22,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 33,
+                              "key": Node {
+                                "end": 24,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 24,
+                                    "index": 24,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 23,
+                                    "index": 23,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 23,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 33,
+                                  "index": 33,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 23,
+                                  "index": 23,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 23,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "end": 33,
+                                "expression": Node {
+                                  "computed": false,
+                                  "end": 31,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 31,
+                                      "index": 31,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": undefined,
+                                    "start": Position {
+                                      "column": 25,
+                                      "index": 25,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "object": Node {
+                                    "end": 29,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 29,
+                                        "index": 29,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": undefined,
+                                      "start": Position {
+                                        "column": 25,
+                                        "index": 25,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "start": 25,
+                                    "type": "ThisExpression",
+                                  },
+                                  "property": Node {
+                                    "end": 31,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 31,
+                                        "index": 31,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": "t",
+                                      "start": Position {
+                                        "column": 30,
+                                        "index": 30,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "name": "t",
+                                    "start": 30,
+                                    "type": "Identifier",
+                                  },
+                                  "start": 25,
+                                  "type": "MemberExpression",
+                                },
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 33,
+                                    "index": 33,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 25,
+                                    "index": 25,
+                                    "line": 1,
+                                  },
+                                },
+                                "start": 25,
+                                "type": "ArkTSDoubleExclamationExpression",
+                              },
+                            },
+                          ],
+                          "start": 22,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 21,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 21,
+                            "index": 21,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 17,
+                            "index": 17,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 17,
+                        "type": "Identifier",
+                      },
+                      "end": 35,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 35,
+                          "index": 35,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 17,
+                          "index": 17,
+                          "line": 1,
+                        },
+                      },
+                      "start": 17,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 35,
+                        "index": 35,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 17,
+                        "index": 17,
+                        "line": 1,
+                      },
+                    },
+                    "start": 17,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 36,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 36,
+                    "index": 36,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 16,
+                    "index": 16,
+                    "line": 1,
+                  },
+                },
+                "start": 16,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 36,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 14,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 14,
+                    "index": 14,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 9,
+                    "index": 9,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 9,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 36,
+                  "index": 36,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 9,
+                  "index": 9,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 9,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 37,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 37,
+              "index": 37,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+          },
+          "start": 8,
+          "type": "ClassBody",
+        },
+        "end": 37,
+        "id": Node {
+          "end": 8,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 7,
+              "index": 7,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 7,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 37,
+            "index": 37,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 37,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 37,
+        "index": 37,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding variable use '$$' ,and use field named with '$'  1`] = `
+Node {
+  "comments": Array [],
+  "end": 63,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 63,
+      "index": 63,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "computed": false,
+              "decorators": Array [
+                Node {
+                  "end": 15,
+                  "expression": Node {
+                    "end": 15,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 15,
+                        "index": 15,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": "State",
+                      "start": Position {
+                        "column": 10,
+                        "index": 10,
+                        "line": 1,
+                      },
+                    },
+                    "name": "State",
+                    "start": 10,
+                    "type": "Identifier",
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 15,
+                      "index": 15,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 9,
+                      "index": 9,
+                      "line": 1,
+                    },
+                  },
+                  "start": 9,
+                  "type": "Decorator",
+                },
+              ],
+              "end": 30,
+              "key": Node {
+                "end": 22,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 22,
+                    "index": 22,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "$value",
+                  "start": Position {
+                    "column": 16,
+                    "index": 16,
+                    "line": 1,
+                  },
+                },
+                "name": "$value",
+                "start": 16,
+                "type": "Identifier",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 30,
+                  "index": 30,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 9,
+                  "index": 9,
+                  "line": 1,
+                },
+              },
+              "start": 9,
+              "static": false,
+              "type": "ClassProperty",
+              "typeAnnotation": Node {
+                "end": 29,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 29,
+                    "index": 29,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 22,
+                    "index": 22,
+                    "line": 1,
+                  },
+                },
+                "start": 22,
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": Node {
+                  "end": 29,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 29,
+                      "index": 29,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 23,
+                      "index": 23,
+                      "line": 1,
+                    },
+                  },
+                  "start": 23,
+                  "type": "TSNumberKeyword",
+                },
+              },
+              "value": null,
+            },
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 61,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 60,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 60,
+                              "index": 60,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 43,
+                              "index": 43,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 59,
+                              "key": Node {
+                                "end": 45,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 45,
+                                    "index": 45,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 44,
+                                    "index": 44,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 44,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 59,
+                                  "index": 59,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 44,
+                                  "index": 44,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 44,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "end": 59,
+                                "expression": Node {
+                                  "computed": false,
+                                  "end": 59,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 59,
+                                      "index": 59,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": undefined,
+                                    "start": Position {
+                                      "column": 46,
+                                      "index": 46,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "object": Node {
+                                    "end": 52,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 52,
+                                        "index": 52,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": undefined,
+                                      "start": Position {
+                                        "column": 48,
+                                        "index": 48,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "start": 48,
+                                    "type": "ThisExpression",
+                                  },
+                                  "property": Node {
+                                    "end": 59,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 59,
+                                        "index": 59,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": "$value",
+                                      "start": Position {
+                                        "column": 53,
+                                        "index": 53,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "name": "$value",
+                                    "start": 53,
+                                    "type": "Identifier",
+                                  },
+                                  "start": 46,
+                                  "type": "MemberExpression",
+                                },
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 59,
+                                    "index": 59,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 46,
+                                    "index": 46,
+                                    "line": 1,
+                                  },
+                                },
+                                "start": 46,
+                                "type": "ArkTSTwoWayBindingExpression",
+                              },
+                            },
+                          ],
+                          "start": 43,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 42,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 42,
+                            "index": 42,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 38,
+                            "index": 38,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 38,
+                        "type": "Identifier",
+                      },
+                      "end": 61,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 61,
+                          "index": 61,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 38,
+                          "index": 38,
+                          "line": 1,
+                        },
+                      },
+                      "start": 38,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 61,
+                        "index": 61,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 38,
+                        "index": 38,
+                        "line": 1,
+                      },
+                    },
+                    "start": 38,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 62,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 62,
+                    "index": 62,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 37,
+                    "index": 37,
+                    "line": 1,
+                  },
+                },
+                "start": 37,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 62,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 35,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 35,
+                    "index": 35,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 30,
+                    "index": 30,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 30,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 62,
+                  "index": 62,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 30,
+                  "index": 30,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 30,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 63,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 63,
+              "index": 63,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+          },
+          "start": 8,
+          "type": "ClassBody",
+        },
+        "end": 63,
+        "id": Node {
+          "end": 8,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 7,
+              "index": 7,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 7,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 63,
+            "index": 63,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 63,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 63,
+        "index": 63,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding variable use '$$' ,and use variable named with '$'  1`] = `
+Node {
+  "comments": Array [],
+  "end": 56,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 56,
+      "index": 56,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "computed": false,
+              "end": 23,
+              "key": Node {
+                "end": 15,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 15,
+                    "index": 15,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "$value",
+                  "start": Position {
+                    "column": 9,
+                    "index": 9,
+                    "line": 1,
+                  },
+                },
+                "name": "$value",
+                "start": 9,
+                "type": "Identifier",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 23,
+                  "index": 23,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 9,
+                  "index": 9,
+                  "line": 1,
+                },
+              },
+              "start": 9,
+              "static": false,
+              "type": "ClassProperty",
+              "typeAnnotation": Node {
+                "end": 22,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 22,
+                    "index": 22,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 15,
+                    "index": 15,
+                    "line": 1,
+                  },
+                },
+                "start": 15,
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": Node {
+                  "end": 22,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 22,
+                      "index": 22,
+                      "line": 1,
+                    },
+                    "filename": undefined,
+                    "identifierName": undefined,
+                    "start": Position {
+                      "column": 16,
+                      "index": 16,
+                      "line": 1,
+                    },
+                  },
+                  "start": 16,
+                  "type": "TSNumberKeyword",
+                },
+              },
+              "value": null,
+            },
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 54,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 53,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 53,
+                              "index": 53,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 36,
+                              "index": 36,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 52,
+                              "key": Node {
+                                "end": 38,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 38,
+                                    "index": 38,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 37,
+                                    "index": 37,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 37,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 52,
+                                  "index": 52,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 37,
+                                  "index": 37,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 37,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "end": 52,
+                                "expression": Node {
+                                  "computed": false,
+                                  "end": 52,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 52,
+                                      "index": 52,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": undefined,
+                                    "start": Position {
+                                      "column": 39,
+                                      "index": 39,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "object": Node {
+                                    "end": 45,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 45,
+                                        "index": 45,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": undefined,
+                                      "start": Position {
+                                        "column": 41,
+                                        "index": 41,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "start": 41,
+                                    "type": "ThisExpression",
+                                  },
+                                  "property": Node {
+                                    "end": 52,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 52,
+                                        "index": 52,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": "$value",
+                                      "start": Position {
+                                        "column": 46,
+                                        "index": 46,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "name": "$value",
+                                    "start": 46,
+                                    "type": "Identifier",
+                                  },
+                                  "start": 39,
+                                  "type": "MemberExpression",
+                                },
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 52,
+                                    "index": 52,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 39,
+                                    "index": 39,
+                                    "line": 1,
+                                  },
+                                },
+                                "start": 39,
+                                "type": "ArkTSTwoWayBindingExpression",
+                              },
+                            },
+                          ],
+                          "start": 36,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 35,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 35,
+                            "index": 35,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 31,
+                            "index": 31,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 31,
+                        "type": "Identifier",
+                      },
+                      "end": 54,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 54,
+                          "index": 54,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 31,
+                          "index": 31,
+                          "line": 1,
+                        },
+                      },
+                      "start": 31,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 54,
+                        "index": 54,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 31,
+                        "index": 31,
+                        "line": 1,
+                      },
+                    },
+                    "start": 31,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 55,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 55,
+                    "index": 55,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 30,
+                    "index": 30,
+                    "line": 1,
+                  },
+                },
+                "start": 30,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 55,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 28,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 28,
+                    "index": 28,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 23,
+                    "index": 23,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 23,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 55,
+                  "index": 55,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 23,
+                  "index": 23,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 23,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 56,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 56,
+              "index": 56,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+          },
+          "start": 8,
+          "type": "ClassBody",
+        },
+        "end": 56,
+        "id": Node {
+          "end": 8,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 7,
+              "index": 7,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 7,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 56,
+            "index": 56,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 56,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 56,
+        "index": 56,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "index": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`arkts two way binding variable use '$$' 1`] = `
+Node {
+  "comments": Array [],
+  "end": 37,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 37,
+      "index": 37,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "index": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 35,
+                    "expression": Node {
+                      "arguments": Array [
+                        Node {
+                          "end": 34,
+                          "loc": SourceLocation {
+                            "end": Position {
+                              "column": 34,
+                              "index": 34,
+                              "line": 1,
+                            },
+                            "filename": undefined,
+                            "identifierName": undefined,
+                            "start": Position {
+                              "column": 22,
+                              "index": 22,
+                              "line": 1,
+                            },
+                          },
+                          "properties": Array [
+                            Node {
+                              "computed": false,
+                              "end": 33,
+                              "key": Node {
+                                "end": 24,
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 24,
+                                    "index": 24,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": "t",
+                                  "start": Position {
+                                    "column": 23,
+                                    "index": 23,
+                                    "line": 1,
+                                  },
+                                },
+                                "name": "t",
+                                "start": 23,
+                                "type": "Identifier",
+                              },
+                              "loc": SourceLocation {
+                                "end": Position {
+                                  "column": 33,
+                                  "index": 33,
+                                  "line": 1,
+                                },
+                                "filename": undefined,
+                                "identifierName": undefined,
+                                "start": Position {
+                                  "column": 23,
+                                  "index": 23,
+                                  "line": 1,
+                                },
+                              },
+                              "method": false,
+                              "shorthand": false,
+                              "start": 23,
+                              "type": "ObjectProperty",
+                              "value": Node {
+                                "end": 33,
+                                "expression": Node {
+                                  "computed": false,
+                                  "end": 33,
+                                  "loc": SourceLocation {
+                                    "end": Position {
+                                      "column": 33,
+                                      "index": 33,
+                                      "line": 1,
+                                    },
+                                    "filename": undefined,
+                                    "identifierName": undefined,
+                                    "start": Position {
+                                      "column": 25,
+                                      "index": 25,
+                                      "line": 1,
+                                    },
+                                  },
+                                  "object": Node {
+                                    "end": 31,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 31,
+                                        "index": 31,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": undefined,
+                                      "start": Position {
+                                        "column": 27,
+                                        "index": 27,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "start": 27,
+                                    "type": "ThisExpression",
+                                  },
+                                  "property": Node {
+                                    "end": 33,
+                                    "loc": SourceLocation {
+                                      "end": Position {
+                                        "column": 33,
+                                        "index": 33,
+                                        "line": 1,
+                                      },
+                                      "filename": undefined,
+                                      "identifierName": "t",
+                                      "start": Position {
+                                        "column": 32,
+                                        "index": 32,
+                                        "line": 1,
+                                      },
+                                    },
+                                    "name": "t",
+                                    "start": 32,
+                                    "type": "Identifier",
+                                  },
+                                  "start": 25,
+                                  "type": "MemberExpression",
+                                },
+                                "loc": SourceLocation {
+                                  "end": Position {
+                                    "column": 33,
+                                    "index": 33,
+                                    "line": 1,
+                                  },
+                                  "filename": undefined,
+                                  "identifierName": undefined,
+                                  "start": Position {
+                                    "column": 25,
+                                    "index": 25,
+                                    "line": 1,
+                                  },
+                                },
+                                "start": 25,
+                                "type": "ArkTSTwoWayBindingExpression",
+                              },
+                            },
+                          ],
+                          "start": 22,
+                          "type": "ObjectExpression",
+                        },
+                      ],
+                      "callee": Node {
+                        "end": 21,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 21,
+                            "index": 21,
+                            "line": 1,
+                          },
+                          "filename": undefined,
+                          "identifierName": "Text",
+                          "start": Position {
+                            "column": 17,
+                            "index": 17,
+                            "line": 1,
+                          },
+                        },
+                        "name": "Text",
+                        "start": 17,
+                        "type": "Identifier",
+                      },
+                      "end": 35,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 35,
+                          "index": 35,
+                          "line": 1,
+                        },
+                        "filename": undefined,
+                        "identifierName": undefined,
+                        "start": Position {
+                          "column": 17,
+                          "index": 17,
+                          "line": 1,
+                        },
+                      },
+                      "start": 17,
+                      "type": "ArkTSCallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 35,
+                        "index": 35,
+                        "line": 1,
+                      },
+                      "filename": undefined,
+                      "identifierName": undefined,
+                      "start": Position {
+                        "column": 17,
+                        "index": 17,
+                        "line": 1,
+                      },
+                    },
+                    "start": 17,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "end": 36,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 36,
+                    "index": 36,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": undefined,
+                  "start": Position {
+                    "column": 16,
+                    "index": 16,
+                    "line": 1,
+                  },
+                },
+                "start": 16,
+                "type": "BlockStatement",
+              },
+              "computed": false,
+              "end": 36,
+              "generator": false,
+              "id": null,
+              "key": Node {
+                "end": 14,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 14,
+                    "index": 14,
+                    "line": 1,
+                  },
+                  "filename": undefined,
+                  "identifierName": "build",
+                  "start": Position {
+                    "column": 9,
+                    "index": 9,
+                    "line": 1,
+                  },
+                },
+                "name": "build",
+                "start": 9,
+                "type": "Identifier",
+              },
+              "kind": "method",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 36,
+                  "index": 36,
+                  "line": 1,
+                },
+                "filename": undefined,
+                "identifierName": undefined,
+                "start": Position {
+                  "column": 9,
+                  "index": 9,
+                  "line": 1,
+                },
+              },
+              "params": Array [],
+              "start": 9,
+              "static": false,
+              "type": "ClassMethod",
+            },
+          ],
+          "end": 37,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 37,
+              "index": 37,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+          },
+          "start": 8,
+          "type": "ClassBody",
+        },
+        "end": 37,
+        "id": Node {
+          "end": 8,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 8,
+              "index": 8,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "A",
+            "start": Position {
+              "column": 7,
+              "index": 7,
+              "line": 1,
+            },
+          },
+          "name": "A",
+          "start": 7,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 37,
+            "index": 37,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "index": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ArkTSStructDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 37,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 37,
+        "index": 37,
         "line": 1,
       },
       "filename": undefined,
