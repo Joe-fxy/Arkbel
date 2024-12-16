@@ -955,7 +955,16 @@ export default abstract class Tokenizer extends CommentsParser {
           // {|
           this.state.pos += 2;
           this.finishToken(tt.braceBarL);
-        } else {
+        }
+        // else if (
+        //   this.hasPlugin("arkts") &&
+        //   this.input.charCodeAt(this.state.pos + 1) === charCodes.dot
+        // ) {
+        //   // {.
+        //   this.state.pos += 2;
+        //   this.finishToken(tt.braceL);
+        // }
+        else {
           ++this.state.pos;
           this.finishToken(tt.braceL);
         }

@@ -130,15 +130,6 @@ describe("arkts", () => {
     "@Component struct A{@Styles a(){.h(10)}}",
   );
 
-  // shouldParse(
-  //   "if statement in closure",
-  //   "struct A { build() { Column('a') { Text('b') if (true) { Text('b') } } } }",
-  // );
-  //
-  // shouldParse(
-  //   "if else statement in closure",
-  //   "struct A { build() { Column('a') { if (true) { Text('b') } else if (true) { Text('c') } else { Text('d') } } } }",
-  // );
   shouldParse(
     "two way binding variable use '!!'",
     "struct A{build(){Text({t:this.t!!})}}",
@@ -151,8 +142,91 @@ describe("arkts", () => {
     "two way binding variable use '$$' ,and use field named with '$' ",
     "struct A{@State $value:number;build(){Text({t:$$this.$value})}}",
   );
+  //
+  //Some trouble met in 2024-12-6
+  //
+  shouldParse(
+    "No two way binding variable use '$$' ,use field named with '$' ",
+    "struct A{build(){Text({t:$value, b:$b})}}",
+  );
+  shouldParse(
+    "use some kind of '$' such as  '$r'",
+    "struct A{@State placeholder: string = getContext().resourceManager.getStringSync($r('app.string.placeholder'));build(){Text({size: $r('app.integer.placeholderFont_size')})}}",
+  );
   shouldParse(
     "two way binding variable use '!!' ,and use expression with double '!' ",
     "function A(s:boolean|undefined){return !!s};struct A{build(){Text({t:this.t!!})}}",
+  );
+  shouldParse(
+    "';' in any end of line, especially for LazyForEach",
+    "struct A { a:s=new s();build() { Column() { LazyForEach(this.a,(item:string)=>{ Row(){} },item=>item); }}}",
+  );
+  shouldParse(
+    "';' in any end of line, especially in a function with ArkTSCallExpression",
+    "struct A { build() {}} @Builder function Foo(){A();}",
+  );
+  shouldParse(
+    "if statement in the closure",
+    "struct A { build() { Column('a') { Text('b') if (true) { Text('b') } } } }",
+  );
+
+  shouldParse(
+    "if else statement in closure",
+    "struct A { build() { Column('a') { if (true) { Text('b') } else if (true) { Text('c') } else { Text('d') } } } }",
+  );
+  shouldParse(
+    "param in a block",
+    "struct A { build() { Column({ a:b,b:c}) } }",
+  );
+  shouldParse(
+    "param in a block in another block",
+    "struct A { build() { Column({ a:b,b:c, c:{d:e,e:f}})} }",
+  );
+  shouldParse(
+    "export default try for function use decorator",
+    "@Build export default function A(){}",
+  );
+  shouldParse(
+    "export default try for function without decorator",
+    "export default function A(){}",
+  );
+  shouldParse(
+    "export try for function use decorator",
+    "@Build export function A(){}",
+  );
+  shouldParse(
+    "export try for function without decorator",
+    "export function A(){}",
+  );
+  //
+  //Some trouble met in 2024-12-9
+  //
+  shouldParse(
+    "this token in a trailingClosure body with a lot",
+    "@Component struct A { a;build(){ Row(){this.a() this.a() this.a(f)}}}",
+  );
+  shouldParse(
+    "';' in any end of line, include after a call",
+    "struct A{build(){Column(){Text().b(); Text()}.a();}}",
+  );
+  shouldParse(
+    "If/else in not only closure",
+    "struct A{build(){if(Text(a)){}else{}}}",
+  );
+  shouldParse(
+    "If/else in a ForEach or LazyForEach",
+    "struct A { build() { Column() { ForEach(this,(item:string)=>{ if(1){Row(){}}else if(b){Text('c')}else{Text('v')} },(item:number)=>item) }}}",
+  );
+  shouldParse(
+    "If/else in a ForEach or LazyForEach",
+    "struct A { build() { Column() { ForEach(this,(item:string)=>{ if(1){Row(){}}else if(b){Text('c')}else{Text('v')} },(item:number)=>item) }}}",
+  );
+  shouldParse(
+    "@Builder Decorate Function in a struct",
+    "struct A{@Builder Foo(a:string){if(1){Row(){}}else if(b){Text('c')}else{Text('v')}}}",
+  );
+  shouldParse(
+    "a lot if ForEach or LazyForEach",
+    "struct A { build() { Column() { ForEach(this,(item:string)=>{ ForEach(this,(item:string)=>{ if(1){Row('a').b()}else if(b){Text('c')}else{Text('v')} },(item:number)=>item); Row('c').b()},(item:number)=>item) }}}",
   );
 });

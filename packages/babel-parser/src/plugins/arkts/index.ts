@@ -3,7 +3,7 @@ import type { ParseStatementFlag } from "../../parser/statement.ts";
 import type * as N from "../../types.ts";
 import { tt } from "../../tokenizer/types.ts";
 import type { Undone } from "../../parser/node.ts";
-import { cloneIdentifier } from "../../parser/node.ts";
+//import { cloneIdentifier } from "../../parser/node.ts";
 import { ScopeFlag } from "../../util/scopeflags.ts";
 import type Parser from "../../parser";
 import { Errors } from "../../parse-error.ts";
@@ -87,67 +87,71 @@ export default (superClass: ReturnType<typeof typescript>) =>
 
       return this.finishNode(node, "ArkTSStructDeclaration");
     }
-    parseObjectProperty(
-      this: Parser,
-      prop: Undone<N.ObjectProperty>,
-      startLoc: Position | undefined | null,
-      isPattern: boolean,
-      refExpressionErrors?: ExpressionErrors | null,
-    ): N.ObjectProperty | undefined | null {
-      prop.shorthand = false;
 
-      if (this.eat(tt.colon)) {
-        let f = false;
-        if (this.eat(tt.braceL)) {
-          if (!this.eat(tt.dot)) {
-            this.raise(Errors.UnexpectedToken, this.state.curPosition(), {
-              unexpected: ".",
-            });
-          }
-          f = true;
-        }
-        prop.value = isPattern
-          ? this.parseMaybeDefault(this.state.startLoc)
-          : this.parseMaybeAssignAllowIn(refExpressionErrors);
-        if (f) {
-          this.eat(tt.braceR);
-        }
-        return this.finishNode(prop, "ObjectProperty");
-      }
+    //TODO:Find other way to fix "statestyles" property
 
-      if (!prop.computed && prop.key.type === "Identifier") {
-        // PropertyDefinition:
-        //   IdentifierReference
-        //   CoverInitializedName
-        // Note: `{ eval } = {}` will be checked in `checkLVal` later.
-        this.checkReservedWord(prop.key.name, prop.key.loc.start, true, false);
-
-        if (isPattern) {
-          prop.value = this.parseMaybeDefault(
-            startLoc,
-            cloneIdentifier(prop.key),
-          );
-        } else if (this.match(tt.eq)) {
-          const shorthandAssignLoc = this.state.startLoc;
-          if (refExpressionErrors != null) {
-            if (refExpressionErrors.shorthandAssignLoc === null) {
-              refExpressionErrors.shorthandAssignLoc = shorthandAssignLoc;
-            }
-          } else {
-            this.raise(Errors.InvalidCoverInitializedName, shorthandAssignLoc);
-          }
-          prop.value = this.parseMaybeDefault(
-            startLoc,
-            cloneIdentifier(prop.key),
-          );
-        } else {
-          prop.value = cloneIdentifier(prop.key);
-        }
-        prop.shorthand = true;
-
-        return this.finishNode(prop, "ObjectProperty");
-      }
-    }
+    // parseObjectProperty(
+    //   this: Parser,
+    //   prop: Undone<N.ObjectProperty>,
+    //   startLoc: Position | undefined | null,
+    //   isPattern: boolean,
+    //   refExpressionErrors?: ExpressionErrors | null,
+    // ): N.ObjectProperty | undefined | null {
+    //   prop.shorthand = false;
+    //
+    //   if (this.eat(tt.colon)) {
+    //     let f = false;
+    //     if (this.eat(tt.braceL)) {
+    //       if (!this.eat(tt.dot)) {
+    //         //只有stateStyles这么用，所以不应该raiseErrors
+    //         // this.raise(Errors.UnexpectedToken, this.state.curPosition(), {
+    //         //   unexpected: ".",
+    //         // });
+    //       }
+    //       f = true;
+    //     }
+    //     prop.value = isPattern
+    //       ? this.parseMaybeDefault(this.state.startLoc)
+    //       : this.parseMaybeAssignAllowIn(refExpressionErrors);
+    //     if (f) {
+    //       this.eat(tt.braceR);
+    //     }
+    //     return this.finishNode(prop, "ObjectProperty");
+    //   }
+    //
+    //   if (!prop.computed && prop.key.type === "Identifier") {
+    //     // PropertyDefinition:
+    //     //   IdentifierReference
+    //     //   CoverInitializedName
+    //     // Note: `{ eval } = {}` will be checked in `checkLVal` later.
+    //     this.checkReservedWord(prop.key.name, prop.key.loc.start, true, false);
+    //
+    //     if (isPattern) {
+    //       prop.value = this.parseMaybeDefault(
+    //         startLoc,
+    //         cloneIdentifier(prop.key),
+    //       );
+    //     } else if (this.match(tt.eq)) {
+    //       const shorthandAssignLoc = this.state.startLoc;
+    //       if (refExpressionErrors != null) {
+    //         if (refExpressionErrors.shorthandAssignLoc === null) {
+    //           refExpressionErrors.shorthandAssignLoc = shorthandAssignLoc;
+    //         }
+    //       } else {
+    //         this.raise(Errors.InvalidCoverInitializedName, shorthandAssignLoc);
+    //       }
+    //       prop.value = this.parseMaybeDefault(
+    //         startLoc,
+    //         cloneIdentifier(prop.key),
+    //       );
+    //     } else {
+    //       prop.value = cloneIdentifier(prop.key);
+    //     }
+    //     prop.shorthand = true;
+    //
+    //     return this.finishNode(prop, "ObjectProperty");
+    //   }
+    // }
     parseDecorator(this: Parser): N.Decorator {
       this.expectOnePlugin(["decorators", "decorators-legacy"]);
 
@@ -287,8 +291,42 @@ export default (superClass: ReturnType<typeof typescript>) =>
       allowExpression?: boolean | null,
       isMethod: boolean = false,
     ) {
-      if (this.inStylesFunction) {
-        if (!this.inStructContext) {
+      if (
+        this.inStylesFunction ||
+        (this.inExtendFunction && !this.inStructContext)
+      ) {
+        if (this.inStylesFunction) {
+          if (!this.inStructContext) {
+            const loc1 = {
+              start: {
+                line: 1,
+                column: 1,
+                index: 1,
+              },
+              end: {
+                line: 1,
+                column: 1,
+                index: 1,
+              },
+              filename: "undefined",
+              identifierName: "Styles",
+            };
+            const decorators_node: N.Decorator = {
+              type: "Decorator",
+              start: 1,
+              end: 1,
+              loc: loc1,
+              expression: {
+                type: "Identifier",
+                start: 1,
+                end: 1,
+                loc: loc1,
+                name: "Styles",
+              },
+            };
+            node.decorators = [decorators_node];
+          }
+        } else {
           const loc1 = {
             start: {
               line: 1,
@@ -301,7 +339,7 @@ export default (superClass: ReturnType<typeof typescript>) =>
               index: 1,
             },
             filename: "undefined",
-            identifierName: "Styles",
+            identifierName: "Extend",
           };
           const decorators_node: N.Decorator = {
             type: "Decorator",
@@ -313,7 +351,7 @@ export default (superClass: ReturnType<typeof typescript>) =>
               start: 1,
               end: 1,
               loc: loc1,
-              name: "Styles",
+              name: "Extend",
             },
           };
           node.decorators = [decorators_node];
@@ -330,53 +368,39 @@ export default (superClass: ReturnType<typeof typescript>) =>
           ArkTSParseContext.TOP_FIRST,
         );
         this.scope.exit();
+        this.eat(tt.semi);
         this.expect(tt.braceR);
         node.body = this.finishNode(bodyNode, "BlockStatement");
         return;
       }
-      if (this.inExtendFunction && !this.inStructContext) {
-        const loc1 = {
-          start: {
-            line: 1,
-            column: 1,
-            index: 1,
-          },
-          end: {
-            line: 1,
-            column: 1,
-            index: 1,
-          },
-          filename: "undefined",
-          identifierName: "Extend",
-        };
-        const decorators_node: N.Decorator = {
-          type: "Decorator",
-          start: 1,
-          end: 1,
-          loc: loc1,
-          expression: {
-            type: "Identifier",
-            start: 1,
-            end: 1,
-            loc: loc1,
-            name: "Extend",
-          },
-        };
-        node.decorators = [decorators_node];
+      if (this.inStructContext && (this.inForEach || this.inLazyForeach)) {
+        //foreach
+        if (this.inForEach) this.inForEach = false; // to avoid 嵌套 Foreach
+        else this.inLazyForeach = false;
         const bodyNode = this.startNode<N.BlockStatement>();
         this.expect(tt.braceL);
-        this.scope.enter(ScopeFlag.FUNCTION);
+        this.scope.enter(ScopeFlag.FUNCTION || ScopeFlag.ARROW); //?
 
+        // however for coherence with other function body parsing, we still parse it as an array.
         bodyNode.body = [];
 
-        this.arktsParseExtendExpression(
+        this.arktsParseForeachExpression(
           bodyNode,
           false,
           ArkTSParseContext.TOP_FIRST,
         );
         this.scope.exit();
+        this.eat(tt.semi);
         this.expect(tt.braceR);
         node.body = this.finishNode(bodyNode, "BlockStatement");
+        return;
+      }
+      if (
+        !this.inBuilderFunction &&
+        // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
+        (!this.inStructContext || node.key?.name !== "build")
+      ) {
+        super.parseFunctionBody(node, allowExpression, isMethod);
         return;
       }
       if (this.inBuilderFunction) {
@@ -411,61 +435,18 @@ export default (superClass: ReturnType<typeof typescript>) =>
           };
           node.decorators = [decorators_node];
         }
-        const bodyNode = this.startNode<N.BlockStatement>();
-        this.expect(tt.braceL);
-        this.scope.enter(ScopeFlag.FUNCTION);
-        bodyNode.body = [];
-        this.arktsParseBuildExpression(
-          bodyNode,
-          false,
-          ArkTSParseContext.TOP_FIRST,
-        );
-        this.scope.exit();
-        this.expect(tt.braceR);
-        node.body = this.finishNode(bodyNode, "BlockStatement");
-        return;
       }
-      if (this.inStructContext && (this.inForEach || this.inLazyForeach)) {
-        //foreach
-        if (this.inForEach) this.inForEach = false; // to avoid 嵌套 Foreach
-        else this.inLazyForeach = false;
-        const bodyNode = this.startNode<N.BlockStatement>();
-        this.expect(tt.braceL);
-        this.scope.enter(ScopeFlag.FUNCTION || ScopeFlag.ARROW); //?
-
-        // however for coherence with other function body parsing, we still parse it as an array.
-        bodyNode.body = [];
-
-        this.arktsParseForeachExpression(
-          bodyNode,
-          false,
-          ArkTSParseContext.TOP_FIRST,
-        );
-        this.scope.exit();
-        this.expect(tt.braceR);
-        node.body = this.finishNode(bodyNode, "BlockStatement");
-        return;
-      }
-      // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
-      if (!this.inStructContext || node.key?.name !== "build") {
-        super.parseFunctionBody(node, allowExpression, isMethod);
-        return;
-      }
-
       const bodyNode = this.startNode<N.BlockStatement>();
       this.expect(tt.braceL);
       this.scope.enter(ScopeFlag.FUNCTION);
-
-      // Theoretically the body of `build` can only be one element (a UIComponent call),
-      // however for coherence with other function body parsing, we still parse it as an array.
       bodyNode.body = [];
-
       this.arktsParseBuildExpression(
         bodyNode,
         false,
         ArkTSParseContext.TOP_FIRST,
       );
       this.scope.exit();
+      this.eat(tt.semi);
       this.expect(tt.braceR);
       node.body = this.finishNode(bodyNode, "BlockStatement");
     }
@@ -526,7 +507,6 @@ export default (superClass: ReturnType<typeof typescript>) =>
         if (context === ArkTSParseContext.TOP && !allowMultipleExpressions) {
           this.unexpected();
         }
-
         const callNode = this.startNode<N.ArkTSCallExpression>();
         callNode.callee = this.parseIdentifier();
         if (callNode.callee.name == "ForEach") {
@@ -536,7 +516,6 @@ export default (superClass: ReturnType<typeof typescript>) =>
         this.expect(tt.parenL);
         // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
         callNode.arguments = this.parseCallExpressionArguments(tt.parenR);
-
         // Trailing closure
         const closureNode = this.startNode<N.BlockStatement>();
         closureNode.body = [];
@@ -547,23 +526,26 @@ export default (superClass: ReturnType<typeof typescript>) =>
             ArkTSParseContext.CLOSURE,
           );
         }
-
         this.finishNode(callNode, "ArkTSCallExpression");
 
         // Below creates an ExpressionStatement that wraps CallExpression
         // This does not reject multiple calls at top level, which is invalid in ArkTS
         // but for extensibility reason, the rejection is done by previous if statement
         const expNode = this.startNodeAtNode<N.ExpressionStatement>(callNode);
-        const maybeNode = this.arktsParseBuildExpression(
-          callNode,
-          allowMultipleExpressions,
-          context,
-        );
-        this.finishNode(expNode, "ExpressionStatement");
+        if (!this.match(tt._if)) {
+          const maybeNode = this.arktsParseBuildExpression(
+            callNode,
+            allowMultipleExpressions,
+            context,
+          );
+          this.finishNode(expNode, "ExpressionStatement");
 
-        expNode.expression = maybeNode ?? callNode;
+          expNode.expression = maybeNode ?? callNode;
+        } else {
+          // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
+          expNode.expression = callNode;
+        }
         node.body.push(expNode);
-
         // Pass BlockStatement node in so that new nodes can be pushed into
         this.arktsParseBuildExpression(node, allowMultipleExpressions, context);
       } else if (this.eat(tt.dot)) {
@@ -591,7 +573,13 @@ export default (superClass: ReturnType<typeof typescript>) =>
         // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
         callNode.arguments = this.parseCallExpressionArguments(tt.parenR);
         this.finishNode(callNode, "ArkTSCallExpression");
-
+        if (this.match(tt._if)) {
+          return this.arktsParseBuildExpression(
+            node,
+            true,
+            ArkTSParseContext.CLOSURE,
+          );
+        }
         const maybeNode = this.arktsParseBuildExpression(
           callNode,
           allowMultipleExpressions,
@@ -613,8 +601,7 @@ export default (superClass: ReturnType<typeof typescript>) =>
         const ifNode = this.startNode<N.IfStatement>();
         this.next(); // eat `if`
         // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
-        ifNode.test = this.parseHeaderExpression();
-
+        ifNode.test = super.parseHeaderExpression();
         const consequentNode = this.startNode<N.BlockStatement>();
         consequentNode.body = [];
         if (this.match(tt.braceL)) {
@@ -626,11 +613,13 @@ export default (superClass: ReturnType<typeof typescript>) =>
         } else {
           this.unexpected(null, tt.braceL);
         }
-
+        //alternate may be IfStatement or BlockStatement
+        const alter_node = this.startNode();
+        alter_node.body = [];
         ifNode.alternate = this.eat(tt._else)
           ? this.arktsParseBuildExpression(
-              null,
-              true,
+              alter_node,
+              allowMultipleExpressions,
               ArkTSParseContext.CLOSURE,
             )
           : null;
@@ -653,6 +642,7 @@ export default (superClass: ReturnType<typeof typescript>) =>
         );
 
         this.scope.exit();
+        this.eat(tt.semi);
         this.expect(tt.braceR);
 
         if (node === null) {
@@ -906,18 +896,20 @@ export default (superClass: ReturnType<typeof typescript>) =>
 
         this.finishNode(callNode, "ArkTSCallExpression");
 
-        // Below creates an ExpressionStatement that wraps CallExpression
-        // This does not reject multiple calls at top level, which is invalid in ArkTS
-        // but for extensibility reason, the rejection is done by previous if statement
         const expNode = this.startNodeAtNode<N.ExpressionStatement>(callNode);
-        const maybeNode = this.arktsParseForeachExpression(
-          callNode,
-          allowMultipleExpressions,
-          context,
-        );
-        this.finishNode(expNode, "ExpressionStatement");
+        if (!this.match(tt._if)) {
+          const maybeNode = this.arktsParseBuildExpression(
+            callNode,
+            allowMultipleExpressions,
+            context,
+          );
+          this.finishNode(expNode, "ExpressionStatement");
 
-        expNode.expression = maybeNode ?? callNode;
+          expNode.expression = maybeNode ?? callNode;
+        } else {
+          // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
+          expNode.expression = callNode;
+        }
         node.body.push(expNode);
 
         // Pass BlockStatement node in so that new nodes can be pushed into
@@ -961,17 +953,14 @@ export default (superClass: ReturnType<typeof typescript>) =>
         // In this case, the updated node is returned with top priority.
         return callNode;
       } else if (context === ArkTSParseContext.CLOSURE && this.match(tt._if)) {
-        // (Syntactically) if statement is only allowed in closure (rather than top level of build method)
-        // (Semantically) should also under container component, but parser does not validate it
         const ifNode = this.startNode<N.IfStatement>();
         this.next(); // eat `if`
         // @ts-ignore(Babel 7 vs Babel 8) ArkTS:it occurs in ArkTSParserMixin in fact
-        ifNode.test = this.parseHeaderExpression();
-
+        ifNode.test = super.parseHeaderExpression();
         const consequentNode = this.startNode<N.BlockStatement>();
         consequentNode.body = [];
         if (this.match(tt.braceL)) {
-          ifNode.consequent = this.arktsParseForeachExpression(
+          ifNode.consequent = this.arktsParseBuildExpression(
             consequentNode,
             true,
             ArkTSParseContext.CLOSURE,
@@ -979,11 +968,13 @@ export default (superClass: ReturnType<typeof typescript>) =>
         } else {
           this.unexpected(null, tt.braceL);
         }
-
+        //alternate may be IfStatement or BlockStatement
+        const alter_node = this.startNode();
+        alter_node.body = [];
         ifNode.alternate = this.eat(tt._else)
-          ? this.arktsParseForeachExpression(
-              null,
-              true,
+          ? this.arktsParseBuildExpression(
+              alter_node,
+              allowMultipleExpressions,
               ArkTSParseContext.CLOSURE,
             )
           : null;
@@ -1006,6 +997,7 @@ export default (superClass: ReturnType<typeof typescript>) =>
         );
 
         this.scope.exit();
+        this.eat(tt.semi);
         this.expect(tt.braceR);
 
         if (node === null) {
